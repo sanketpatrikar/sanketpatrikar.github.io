@@ -1,8 +1,0 @@
-
-User-agent: Baiduspider
-User-agent: Baiduspider-video
-User-agent: Baiduspider-image
-Disallow: /
-
-User-agent: *
-Sitemap: https://sanketpatrikar.github.io/sitemap.xml
