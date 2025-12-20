@@ -14,14 +14,12 @@ const config = defineConfig({
     }),
     tailwindcss(),
     tanstackStart({
-      spa: {
-        prerender: {
-          enabled: true,
-          crawlLinks: true,
-          retryCount: 3,
-          autoSubfolderIndex: true,
-        },
-      },
+      prerender: {
+        enabled: true,
+        crawlLinks: true,
+        retryCount: 3,
+        autoSubfolderIndex: true,
+      }
     }),
     viteReact(),
   ]
