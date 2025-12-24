@@ -1,52 +1,52 @@
 name: deploy tanstack start site to github pages
 
 on:
-  push:
-    branches: ["main"]
-  workflow_dispatch:
+    push:
+        branches: ["main"]
+    workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+    contents: read
+    pages: write
+    id-token: write
 
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+    group: "pages"
+    cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    deploy:
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: checkout
-        uses: actions/checkout@v4
+        steps:
+            - name: checkout
+              uses: actions/checkout@v4
 
-      - run: corepack enable
+            - run: corepack enable
 
-      - name: setup node
-        uses: actions/setup-node@v4
-        with:
-            node-version: 20
-            cache: pnpm
+            - name: setup node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+                  cache: pnpm
 
-      - name: install dependencies
-        run: pnpm install --frozen-lockfile
+            - name: install dependencies
+              run: pnpm install --frozen-lockfile
 
-      - name: build
-        run: pnpm run build
+            - name: build
+              run: pnpm run build
 
-      - name: setup pages
-        uses: actions/configure-pages@v5
+            - name: setup pages
+              uses: actions/configure-pages@v5
 
-      - name: upload pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist/client
+            - name: upload pages artifact
+              uses: actions/upload-pages-artifact@v3
+              with:
+                  path: ./dist/client
 
-      - name: deploy to github pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+            - name: deploy to github pages
+              id: deployment
+              uses: actions/deploy-pages@v4

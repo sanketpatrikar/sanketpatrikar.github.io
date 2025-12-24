@@ -1,0 +1,17 @@
+{
+	"$schema": "./node_modules/oxfmt/configuration_schema.json",
+	"ignorePatterns": ["node_modules", "dist", "build", ".tanstack", "routeTree.gen.ts"],
+	"indentWidth": 4,
+	"lineWidth": 100,
+	"semi": true,
+	"trailingCommas": "es5",
+	"bracketSpacing": true,
+	"experimentalSortImports": {
+		"groupSpecifiers": true,
+		"ignoreCase": true,
+		"ignoreDeclarationSort": true
+	},
+	"experimentalSortPackageJson": true,
+	"tabWidth": 4,
+	"useTabs": true
+}

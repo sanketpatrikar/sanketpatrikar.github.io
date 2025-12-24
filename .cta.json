@@ -1,15 +1,12 @@
 {
-  "projectName": "site",
-  "mode": "file-router",
-  "typescript": true,
-  "tailwind": true,
-  "packageManager": "pnpm",
-  "git": true,
-  "addOnOptions": {},
-  "version": 1,
-  "framework": "react-cra",
-  "chosenAddOns": [
-    "start",
-    "nitro"
-  ]
+	"projectName": "site",
+	"mode": "file-router",
+	"typescript": true,
+	"tailwind": true,
+	"packageManager": "pnpm",
+	"git": true,
+	"addOnOptions": {},
+	"version": 1,
+	"framework": "react-cra",
+	"chosenAddOns": ["start", "nitro"]
 }
