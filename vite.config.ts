@@ -4,6 +4,9 @@ import { tanstackStart } from '@tanstack/react-start/plugin/vite'
 import viteReact from '@vitejs/plugin-react'
 import viteTsConfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
+import mdx from '@mdx-js/rollup'
+import remarkFrontmatter from 'remark-frontmatter'
+import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
 
 const config = defineConfig({
   plugins: [
@@ -22,6 +25,10 @@ const config = defineConfig({
       }
     }),
     viteReact(),
+    mdx({
+      providerImportSource: "@mdx-js/react",
+      remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
+    })
   ]
 })
 
