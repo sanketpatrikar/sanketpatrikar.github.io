@@ -34,3 +34,9 @@ pre {
 pre code {
 	font-family: "JetBrains Mono", "Fira Code", monospace;
 }
+
+/* react-tweet overrides */
+.react-tweet-theme {
+	--tweet-container-margin: 0;
+	/* margin: 15px auto; */
+}
