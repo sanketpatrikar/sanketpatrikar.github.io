@@ -41,14 +41,15 @@ function Posts() {
 					</h1>
 				</div>
 				<div className="space-y-3">
-					{posts.map((post) => (
+					{void console.log(posts)}
+					{posts.length > 0 ? posts.map((post) => (
 						<div key={post.slug} className="flex gap-4 items-baseline">
 							<span className="text-sm text-gray-400 w-24 shrink-0">{post.date}</span>
 							<Link to={`/${post.slug}`} className="hover:underline">
 								{post.title}
 							</Link>
 						</div>
-					))}
+					)) : (<div className="text-gray-600">Nothing here yet.</div>)}
 				</div>
 			</div>
 		</div>
