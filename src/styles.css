@@ -22,3 +22,15 @@ body {
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
+
+/* Shiki code blocks */
+pre {
+	padding: 1.5rem 1rem;
+	overflow-x: auto;
+	font-size: 0.875rem;
+	line-height: 1.6;
+	margin: 15px 0px;
+}
+pre code {
+	font-family: "JetBrains Mono", "Fira Code", monospace;
+}

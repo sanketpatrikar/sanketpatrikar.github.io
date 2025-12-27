@@ -1,4 +1,5 @@
 import mdx from "@mdx-js/rollup";
+import rehypeShiki from "@shikijs/rehype";
 import tailwindcss from "@tailwindcss/vite";
 import { devtools } from "@tanstack/devtools-vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
@@ -28,6 +29,14 @@ const config = defineConfig({
 		mdx({
 			providerImportSource: "@mdx-js/react",
 			remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
+			rehypePlugins: [
+				[
+					rehypeShiki,
+					{
+						theme: "catppuccin-frappe",
+					},
+				],
+			],
 		}),
 	],
 });
