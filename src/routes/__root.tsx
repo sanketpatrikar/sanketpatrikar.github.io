@@ -26,7 +26,7 @@ export const Route = createRootRoute({
 			{
 				rel: "alternate",
 				type: "application/rss+xml",
-				title: "RSS Feed",
+				title: "Posts by Sanket Patrikar",
 				href: "https://sanketpatrikar.github.io/feed.xml",
 			},
 		],
