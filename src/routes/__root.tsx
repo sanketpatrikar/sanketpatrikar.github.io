@@ -22,6 +22,13 @@ export const Route = createRootRoute({
 				href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
 				rel: "stylesheet",
 			},
+			// To help RSS readers find your feed
+			{
+				rel: "alternate",
+				type: "application/rss+xml",
+				title: "RSS Feed",
+				href: "/feed.xml",
+			},
 		],
 		meta: [
 			{
