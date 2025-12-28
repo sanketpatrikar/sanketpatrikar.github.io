@@ -24,6 +24,10 @@ const config = defineConfig({
 				enabled: true,
 				retryCount: 3,
 			},
+			sitemap: {
+				enabled: true,
+				host: "https://sanketpatrikar.github.io",
+			},
 		}),
 		viteReact(),
 		mdx({
@@ -39,7 +43,7 @@ const config = defineConfig({
 			],
 		}),
 	],
-ssr: {
+	ssr: {
 		noExternal: ["react-tweet"],
 	},
 });

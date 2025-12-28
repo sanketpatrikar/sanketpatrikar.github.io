@@ -4,7 +4,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev --port 3000",
-		"build": "vite build",
+		"build": "vite build && node scripts/generate-rss.ts",
 		"preview": "vite preview",
 		"test": "vitest run",
 		"lint": "oxlint",
@@ -40,6 +40,8 @@
 		"@types/react": "^19.2.0",
 		"@types/react-dom": "^19.2.0",
 		"@vitejs/plugin-react": "^5.0.4",
+		"feed": "^5.1.0",
+		"gray-matter": "^4.0.3",
 		"jsdom": "^27.0.0",
 		"oxfmt": "^0.20.0",
 		"oxlint": "^1.35.0",
