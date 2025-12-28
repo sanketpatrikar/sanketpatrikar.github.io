@@ -46,7 +46,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			<head>
 				<HeadContent />
 			</head>
-			<body className="min-h-screen pt-20 px-6">
+			<body className="min-h-screen pt-(--header-offset) px-6">
 				{children}
 				<Scripts />
 			</body>
