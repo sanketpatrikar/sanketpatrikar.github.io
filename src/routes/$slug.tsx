@@ -28,7 +28,7 @@ function PostComponent() {
 	}, [loader]);
 
 	if (!Post) {
-		return <div>loading...</div>;
+		return null;
 	}
 	return <Post />;
 }
