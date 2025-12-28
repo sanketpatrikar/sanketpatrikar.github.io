@@ -4,10 +4,10 @@ export const Route = createFileRoute("/")({ component: App });
 
 function App() {
 	return (
-		<div className="flex flex-col justify-between min-h-screen relative pt-20 px-6 overflow-hidden">
+		<div className="flex flex-col justify-between overflow-hidden">
 			<div id="hero" className="">
 				<div className="flex gap-6 mb-6">
-					<h1 className="text-3xl md:text-5xl [letter-spacing:-0.052em]">
+					<h1 className="text-3xl md:text-5xl tracking-[-0.052em]">
 						<span className="">Sanket Patrikar</span>
 					</h1>
 				</div>
