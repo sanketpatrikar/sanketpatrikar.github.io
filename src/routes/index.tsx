@@ -15,9 +15,14 @@ function App() {
 					Full-stack developer focused on building simple, scalable products. Working
 					primarily with React, TypeScript, and Postgres.
 				</p>
-				<Link to="/posts" className="text-lg underline">
-					Posts →
-				</Link>
+				<div className="flex flex-col gap-3">
+					<Link to="/resume" className="text-lg underline">
+						Resume →
+					</Link>
+					<Link to="/posts" className="text-lg underline">
+						Posts →
+					</Link>
+				</div>
 			</div>
 			<div id="contact-section" className="mb-8">
 				<p className="text-lg max-w-3xl">
