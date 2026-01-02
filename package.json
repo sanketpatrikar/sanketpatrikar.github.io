@@ -4,7 +4,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev --port 3000",
-		"build": "vite build && node scripts/generate-rss.ts",
+		"build": "vite build && node scripts/generate-rss.ts && node -e \"require('fs').copyFileSync('public/resume-sanket-patrikar.pdf', 'dist/client/resume-sanket-patrikar.pdf')\"",
 		"preview": "vite preview",
 		"test": "vitest run",
 		"lint": "oxlint",

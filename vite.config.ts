@@ -10,6 +10,7 @@ import { defineConfig } from "vite";
 import viteTsConfigPaths from "vite-tsconfig-paths";
 
 const config = defineConfig({
+	assetsInclude: ["**/*.pdf"],
 	plugins: [
 		devtools(),
 		// This is the plugin that enables path aliases

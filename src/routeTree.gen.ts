@@ -8,97 +8,114 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from "./routes/__root";
-import { Route as PostsRouteImport } from "./routes/posts";
-import { Route as NotFoundRouteImport } from "./routes/NotFound";
-import { Route as SlugRouteImport } from "./routes/$slug";
-import { Route as IndexRouteImport } from "./routes/index";
+import { Route as rootRouteImport } from './routes/__root'
+import { Route as ResumeRouteImport } from './routes/resume'
+import { Route as PostsRouteImport } from './routes/posts'
+import { Route as NotFoundRouteImport } from './routes/NotFound'
+import { Route as SlugRouteImport } from './routes/$slug'
+import { Route as IndexRouteImport } from './routes/index'
 
+const ResumeRoute = ResumeRouteImport.update({
+  id: '/resume',
+  path: '/resume',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PostsRoute = PostsRouteImport.update({
-  id: "/posts",
-  path: "/posts",
+  id: '/posts',
+  path: '/posts',
   getParentRoute: () => rootRouteImport,
-} as any);
+} as any)
 const NotFoundRoute = NotFoundRouteImport.update({
-  id: "/NotFound",
-  path: "/NotFound",
+  id: '/NotFound',
+  path: '/NotFound',
   getParentRoute: () => rootRouteImport,
-} as any);
+} as any)
 const SlugRoute = SlugRouteImport.update({
-  id: "/$slug",
-  path: "/$slug",
+  id: '/$slug',
+  path: '/$slug',
   getParentRoute: () => rootRouteImport,
-} as any);
+} as any)
 const IndexRoute = IndexRouteImport.update({
-  id: "/",
-  path: "/",
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
-} as any);
+} as any)
 
 export interface FileRoutesByFullPath {
-  "/": typeof IndexRoute;
-  "/$slug": typeof SlugRoute;
-  "/NotFound": typeof NotFoundRoute;
-  "/posts": typeof PostsRoute;
+  '/': typeof IndexRoute
+  '/$slug': typeof SlugRoute
+  '/NotFound': typeof NotFoundRoute
+  '/posts': typeof PostsRoute
+  '/resume': typeof ResumeRoute
 }
 export interface FileRoutesByTo {
-  "/": typeof IndexRoute;
-  "/$slug": typeof SlugRoute;
-  "/NotFound": typeof NotFoundRoute;
-  "/posts": typeof PostsRoute;
+  '/': typeof IndexRoute
+  '/$slug': typeof SlugRoute
+  '/NotFound': typeof NotFoundRoute
+  '/posts': typeof PostsRoute
+  '/resume': typeof ResumeRoute
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport;
-  "/": typeof IndexRoute;
-  "/$slug": typeof SlugRoute;
-  "/NotFound": typeof NotFoundRoute;
-  "/posts": typeof PostsRoute;
+  __root__: typeof rootRouteImport
+  '/': typeof IndexRoute
+  '/$slug': typeof SlugRoute
+  '/NotFound': typeof NotFoundRoute
+  '/posts': typeof PostsRoute
+  '/resume': typeof ResumeRoute
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath;
-  fullPaths: "/" | "/$slug" | "/NotFound" | "/posts";
-  fileRoutesByTo: FileRoutesByTo;
-  to: "/" | "/$slug" | "/NotFound" | "/posts";
-  id: "__root__" | "/" | "/$slug" | "/NotFound" | "/posts";
-  fileRoutesById: FileRoutesById;
+  fileRoutesByFullPath: FileRoutesByFullPath
+  fullPaths: '/' | '/$slug' | '/NotFound' | '/posts' | '/resume'
+  fileRoutesByTo: FileRoutesByTo
+  to: '/' | '/$slug' | '/NotFound' | '/posts' | '/resume'
+  id: '__root__' | '/' | '/$slug' | '/NotFound' | '/posts' | '/resume'
+  fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute;
-  SlugRoute: typeof SlugRoute;
-  NotFoundRoute: typeof NotFoundRoute;
-  PostsRoute: typeof PostsRoute;
+  IndexRoute: typeof IndexRoute
+  SlugRoute: typeof SlugRoute
+  NotFoundRoute: typeof NotFoundRoute
+  PostsRoute: typeof PostsRoute
+  ResumeRoute: typeof ResumeRoute
 }
 
-declare module "@tanstack/react-router" {
+declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    "/posts": {
-      id: "/posts";
-      path: "/posts";
-      fullPath: "/posts";
-      preLoaderRoute: typeof PostsRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
-    "/NotFound": {
-      id: "/NotFound";
-      path: "/NotFound";
-      fullPath: "/NotFound";
-      preLoaderRoute: typeof NotFoundRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
-    "/$slug": {
-      id: "/$slug";
-      path: "/$slug";
-      fullPath: "/$slug";
-      preLoaderRoute: typeof SlugRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
-    "/": {
-      id: "/";
-      path: "/";
-      fullPath: "/";
-      preLoaderRoute: typeof IndexRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
+    '/resume': {
+      id: '/resume'
+      path: '/resume'
+      fullPath: '/resume'
+      preLoaderRoute: typeof ResumeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/posts': {
+      id: '/posts'
+      path: '/posts'
+      fullPath: '/posts'
+      preLoaderRoute: typeof PostsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/NotFound': {
+      id: '/NotFound'
+      path: '/NotFound'
+      fullPath: '/NotFound'
+      preLoaderRoute: typeof NotFoundRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$slug': {
+      id: '/$slug'
+      path: '/$slug'
+      fullPath: '/$slug'
+      preLoaderRoute: typeof SlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -107,16 +124,17 @@ const rootRouteChildren: RootRouteChildren = {
   SlugRoute: SlugRoute,
   NotFoundRoute: NotFoundRoute,
   PostsRoute: PostsRoute,
-};
+  ResumeRoute: ResumeRoute,
+}
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>();
+  ._addFileTypes<FileRouteTypes>()
 
-import type { getRouter } from "./router.tsx";
-import type { createStart } from "@tanstack/react-start";
-declare module "@tanstack/react-start" {
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
   interface Register {
-    ssr: true;
-    router: Awaited<ReturnType<typeof getRouter>>;
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
   }
 }
