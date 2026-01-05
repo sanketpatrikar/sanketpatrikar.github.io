@@ -60,7 +60,7 @@ function Resume() {
 					site.
 				</li>
 				<li>
-					Reduced build size from <span className="placeholder">X to Y</span>.
+					Reduced build size from <span className="highlight">~35MB to ~15MB</span> (57% smaller).
 				</li>
 				<li>
 					Upgraded React 15 to 19, refactoring core class components to hooks and
