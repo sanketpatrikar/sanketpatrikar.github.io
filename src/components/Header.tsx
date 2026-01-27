@@ -1,16 +1,16 @@
-import { useRouter } from "@tanstack/react-router";
-import { useCallback } from "react";
+import { useRouter } from "@tanstack/react-router"
+import { useCallback } from "react"
 
 export const Header = ({ children }: { children: React.ReactNode }) => {
-	const router = useRouter();
-	const previousPage = useCallback(() => router.history.back(), [router]);
+	const router = useRouter()
+	const previousPage = useCallback(() => router.history.back(), [router])
 
 	return (
-		<header className="flex gap-7 items-center mb-8">
+		<header className="flex gap-6 items-center mb-10">
 			<button
 				type="button"
 				onClick={previousPage}
-				className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-gray-300 transition-colors cursor-pointer"
+				className="w-10 h-10 rounded-full border border-[#e2d6c7] text-[#2e251f] flex items-center justify-center hover:bg-[#efe4d7] transition-colors cursor-pointer"
 			>
 				<svg
 					width="20"
@@ -25,7 +25,9 @@ export const Header = ({ children }: { children: React.ReactNode }) => {
 					<path d="M19 12H5M12 19l-7-7 7-7" />
 				</svg>
 			</button>
-			<h1 className="text-3xl md:text-5xl tracking-[-0.052em]">{children}</h1>
+			<h1 className="font-display text-4xl md:text-5xl tracking-[-0.03em]">
+				{children}
+			</h1>
 		</header>
-	);
-};
+	)
+}

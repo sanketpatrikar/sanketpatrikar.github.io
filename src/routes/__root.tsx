@@ -1,6 +1,6 @@
-import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
+import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router"
 
-import appCss from "../styles.css?url";
+import appCss from "../styles.css?url"
 
 export const Route = createRootRoute({
 	head: () => ({
@@ -19,7 +19,7 @@ export const Route = createRootRoute({
 				rel: "preconnect",
 			},
 			{
-				href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+				href: "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@200..800&display=swap",
 				rel: "stylesheet",
 			},
 			// To help RSS readers find your feed
@@ -45,7 +45,7 @@ export const Route = createRootRoute({
 	}),
 
 	shellComponent: RootDocument,
-});
+})
 
 function RootDocument({ children }: { children: React.ReactNode }) {
 	return (
@@ -53,10 +53,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			<head>
 				<HeadContent />
 			</head>
-			<body className="min-h-screen pt-(--header-offset) px-6">
+			<body className="min-h-screen bg-[#f6f1ea] text-[#1f1a16] pt-(--header-offset) px-6 antialiased">
 				{children}
 				<Scripts />
 			</body>
 		</html>
-	);
+	)
 }
