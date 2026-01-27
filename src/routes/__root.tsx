@@ -52,6 +52,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 		<html lang="en">
 			<head>
 				<HeadContent />
+				<script
+					dangerouslySetInnerHTML={{
+						__html: reloadOnPreloadErrorScript,
+					}}
+				/>
 			</head>
 			<body className="min-h-screen bg-white text-[#1f1a16] pt-(--header-offset) px-6 antialiased">
 				{children}
@@ -60,3 +65,36 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 		</html>
 	)
 }
+
+const reloadOnPreloadErrorScript = `
+(function () {
+	var reload = function () {
+		window.location.reload()
+	}
+
+	window.addEventListener("vite:preloadError", function (event) {
+		event.preventDefault()
+		reload()
+	})
+
+	window.addEventListener("error", function (event) {
+		if (
+			event.message &&
+			event.message.includes("Failed to fetch dynamically imported module")
+		) {
+			event.preventDefault()
+			reload()
+		}
+	})
+
+	window.addEventListener("unhandledrejection", function (event) {
+		if (
+			event.reason &&
+			String(event.reason).includes("Failed to fetch dynamically imported module")
+		) {
+			event.preventDefault()
+			reload()
+		}
+	})
+})()
+`
