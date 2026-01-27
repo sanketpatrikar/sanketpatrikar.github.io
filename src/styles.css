@@ -1,26 +1,41 @@
 @import "tailwindcss";
 
 :root {
-	--header-offset: 5rem;
+	--header-offset: 4.5rem;
+	--page-bg: #f6f1ea;
+	--ink: #1f1a16;
+	--muted: #6b5f56;
+	--accent: #c07b4a;
+	--border: #e2d6c7;
 }
 
 body {
-	@apply m-0;
+	@apply m-0 bg-[#f6f1ea] text-[#1f1a16];
 	font-family:
-		"Inter",
+		"Manrope",
+		system-ui,
 		-apple-system,
 		BlinkMacSystemFont,
 		"Segoe UI",
-		"Roboto",
-		"Oxygen",
-		"Ubuntu",
-		"Cantarell",
-		"Fira Sans",
-		"Droid Sans",
-		"Helvetica Neue",
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+	font-family:
+		"Instrument Serif",
+		"Iowan Old Style",
+		"Palatino Linotype",
+		serif;
+}
+
+.text-muted {
+	color: var(--muted);
+}
+
+.text-accent {
+	color: var(--accent);
 }
 
 code {
