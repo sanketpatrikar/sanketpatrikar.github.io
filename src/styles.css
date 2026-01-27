@@ -2,15 +2,15 @@
 
 :root {
 	--header-offset: 4.5rem;
-	--page-bg: #f6f1ea;
+	--page-bg: #ffffff;
 	--ink: #1f1a16;
-	--muted: #6b5f56;
+	--muted: #5f5f5f;
 	--accent: #c07b4a;
-	--border: #e2d6c7;
+	--border: #e5e7eb;
 }
 
 body {
-	@apply m-0 bg-[#f6f1ea] text-[#1f1a16];
+	@apply m-0 bg-white text-[#1f1a16];
 	font-family:
 		"Manrope",
 		system-ui,
