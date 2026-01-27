@@ -53,7 +53,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			<head>
 				<HeadContent />
 			</head>
-			<body className="min-h-screen bg-[#f6f1ea] text-[#1f1a16] pt-(--header-offset) px-6 antialiased">
+			<body className="min-h-screen bg-white text-[#1f1a16] pt-(--header-offset) px-6 antialiased">
 				{children}
 				<Scripts />
 			</body>

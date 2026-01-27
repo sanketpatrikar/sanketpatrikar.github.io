@@ -20,20 +20,20 @@ function App() {
 				<div className="flex flex-wrap gap-4 text-base md:text-lg">
 					<Link
 						to="/resume"
-						className="rounded-full border border-[#e2d6c7] px-4 py-2 transition hover:bg-[#efe4d7]"
+						className="rounded-full border border-[#e5e7eb] px-4 py-2 transition hover:bg-[#f3f4f6]"
 					>
 						Resume
 					</Link>
 					<Link
 						to="/posts"
-						className="rounded-full border border-[#e2d6c7] px-4 py-2 transition hover:bg-[#efe4d7]"
+						className="rounded-full border border-[#e5e7eb] px-4 py-2 transition hover:bg-[#f3f4f6]"
 					>
 						Writing
 					</Link>
 				</div>
 			</section>
 
-			<section className="grid gap-10 border-t border-[#e2d6c7] pt-10 md:grid-cols-[1.2fr_0.8fr]">
+			<section className="grid gap-10 border-t border-[#e5e7eb] pt-10 md:grid-cols-[1.2fr_0.8fr]">
 				<div className="space-y-6">
 					<h2 className="font-display text-3xl md:text-4xl">Selected focus</h2>
 					<ul className="space-y-4 text-muted text-base md:text-lg">
@@ -51,7 +51,7 @@ function App() {
 						</li>
 					</ul>
 				</div>
-				<div className="space-y-6 rounded-3xl border border-[#e2d6c7] bg-[#fbf7f1] p-6">
+				<div className="space-y-6 rounded-3xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
 					<div>
 						<p className="text-xs uppercase tracking-[0.35em] text-muted">
 							Currently
