@@ -12,7 +12,7 @@
 body {
 	@apply m-0 bg-white text-[#1f1a16];
 	font-family:
-		"Manrope",
+		"Geist",
 		system-ui,
 		-apple-system,
 		BlinkMacSystemFont,
@@ -24,10 +24,12 @@ body {
 
 .font-display {
 	font-family:
-		"Instrument Serif",
-		"Iowan Old Style",
-		"Palatino Linotype",
-		serif;
+		"Geist",
+		system-ui,
+		-apple-system,
+		BlinkMacSystemFont,
+		"Segoe UI",
+		sans-serif;
 }
 
 .text-muted {
