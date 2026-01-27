@@ -19,7 +19,7 @@ export const Route = createFileRoute("/posts")({ component: Posts })
 function Posts() {
 	return (
 		<main className="mx-auto w-full max-w-4xl py-16">
-			<Header>Writing</Header>
+			<Header>Posts</Header>
 			<div className="space-y-5">
 				{posts.length > 0 ? (
 					posts.map((post) => (
