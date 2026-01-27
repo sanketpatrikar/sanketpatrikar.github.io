@@ -28,7 +28,7 @@ function App() {
 						to="/posts"
 						className="rounded-full border border-[#e2d6c7] px-4 py-2 transition hover:bg-[#efe4d7]"
 					>
-						Writing
+						Posts
 					</Link>
 				</div>
 			</section>
