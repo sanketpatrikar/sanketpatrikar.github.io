@@ -13,112 +13,112 @@ function Resume() {
 				<div className="header-line" />
 
 				<h1 className="name">Sanket Patrikar</h1>
-			<p className="subtitle">Software Engineer</p>
+				<p className="subtitle">Software Engineer</p>
 
-			<div className="contact-info">
-				<p className="location">Nagpur, Maharashtra</p>
-				<p>
-					<strong>Email:</strong>{" "}
-					<a href="mailto:sanketspatrikar@gmail.com">sanketspatrikar@gmail.com</a>
-				</p>
-				<p>
-					<strong>LinkedIn:</strong>{" "}
-					<a href="https://www.linkedin.com/in/sanketpatrikar">
-						linkedin.com/in/sanketpatrikar
-					</a>
-				</p>
-			</div>
+				<div className="contact-info">
+					<p className="location">Nagpur, Maharashtra</p>
+					<p>
+						<strong>Email:</strong>{" "}
+						<a href="mailto:sanketspatrikar@gmail.com">sanketspatrikar@gmail.com</a>
+					</p>
+					<p>
+						<strong>LinkedIn:</strong>{" "}
+						<a href="https://www.linkedin.com/in/sanketpatrikar">
+							linkedin.com/in/sanketpatrikar
+						</a>
+					</p>
+				</div>
 
-			<h2>Skills</h2>
-			<div className="skills">
-				<p>
-					<strong>Languages —</strong> HTML, CSS, JavaScript / TypeScript, SQL
-				</p>
-				<p>
-					<strong>Frameworks &amp; Libraries —</strong> React, React Query, TanStack
-					Start, Vite, NodeJS / Bun, PostgreSQL
-				</p>
-				<p>
-					<strong>Tools —</strong> Git, Docker
-				</p>
-			</div>
+				<h2>Skills</h2>
+				<div className="skills">
+					<p>
+						<strong>Languages —</strong> HTML, CSS, JavaScript / TypeScript, SQL
+					</p>
+					<p>
+						<strong>Frameworks &amp; Libraries —</strong> React, React Query, TanStack
+						Start, Vite, NodeJS, PostgreSQL
+					</p>
+					<p>
+						<strong>Tools —</strong> Git, Docker
+					</p>
+				</div>
 
-			<h2>Experience</h2>
-			<h3>Kizora Software Pvt. Ltd.</h3>
-			<p className="job-title">
-				Software Engineer <span className="dates">— September 2023 - Present</span>
-			</p>
-			<ul>
-				<li>
-					Migrated a React app from Webpack to <span className="highlight">Vite</span>{" "}
-					to speed up build times{" "}
-					<span className="highlight">from 15 min to 10 seconds</span>.
-				</li>
-				<li>
-					Implemented <span className="highlight">lazy loading</span> to reduce the
-					amount of code a page needs to fetch, improving page load times across the
-					site.
-				</li>
-				<li>
-					Reduced build size from <span className="highlight">~35MB to ~15MB</span> (57% smaller).
-				</li>
-				<li>
-					Upgraded React 15 to 19, refactoring core class components to hooks and
-					modernizing core modules.
-				</li>
-				<li>
-					Updated the <span className="highlight">Node</span> version from v8 to v25,
-					updated packages to latest versions, and fixed breakages to ensure
-					compatibility.
-				</li>
-				<li>
-					Migrated React Router v4 to v7, building a custom HOC to bridge class and
-					function components during transition.
-				</li>
-				<li>
-					<span className="highlight">Load tested</span> backend modules with{" "}
-					<span className="highlight">JMeter</span>; identified concurrency limits that
-					were later improved, with parts moving to a reader instance.
-				</li>
-				<li>
-					<span className="highlight">Optimized high-frequency SQL queries</span> for
-					scheduled reports, reducing execution time from{" "}
-					<span className="placeholder">~8s to under 500ms</span> through index tuning
-					and query rewrites.
-				</li>
-			</ul>
+				<h2>Experience</h2>
+				<h3>Kizora Software Pvt. Ltd.</h3>
+				<p className="job-title">
+					Software Engineer <span className="dates">— September 2023 - Present</span>
+				</p>
+				<ul>
+					<li>
+						Migrated a React app from Webpack to{" "}
+						<span className="highlight">Vite</span> to speed up build times{" "}
+						<span className="highlight">from 15 min to 10 seconds</span>.
+					</li>
+					<li>
+						Implemented <span className="highlight">lazy loading</span> to reduce the
+						amount of code a page needs to fetch, improving page load times across the
+						site.
+					</li>
+					<li>
+						Reduced build size from <span className="highlight">35MB to 15MB</span>.
+					</li>
+					<li>
+						Upgraded React 15 to 19, refactoring core class components to hooks and
+						modernizing core modules.
+					</li>
+					<li>
+						Updated the <span className="highlight">Node</span> version from v8 to v24
+						LTS, updated packages to latest versions, and fixed breakages to ensure
+						compatibility.
+					</li>
+					<li>
+						Migrated React Router v4 to v7, building a custom HOC to bridge class and
+						function components during transition.
+					</li>
+					<li>
+						<span className="highlight">Load tested</span> backend modules with{" "}
+						<span className="highlight">JMeter</span>; identified concurrency limits
+						that were later improved, with parts moving to a reader instance.
+					</li>
+					<li>
+						<span className="highlight">Optimized high-frequency SQL queries</span> for
+						scheduled reports, reducing execution time from{" "}
+						<span className="highlight">3 seconds to 500ms</span> through index tuning
+						and query rewrites.
+					</li>
+				</ul>
 
-			<h2>Education</h2>
-			<h3>Bachelor's of Engineering in IT</h3>
-			<p className="job-title">
-				KDK College of Engineering, Nagpur{" "}
-				<span className="dates">— August 2019 - May 2023</span>
-			</p>
+				<h2>Education</h2>
+				<h3>Bachelor's of Engineering in IT</h3>
+				<p className="job-title">
+					KDK College of Engineering, Nagpur{" "}
+					<span className="dates">— August 2019 - May 2023</span>
+				</p>
 
-			<a
-				href="/resume-sanket-patrikar.pdf"
-				download
-				className="download-btn"
-				title="Download PDF"
-			>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					width="24"
-					height="24"
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="currentColor"
-					strokeWidth="2"
-					strokeLinecap="round"
-					strokeLinejoin="round"
+				<a
+					href="/resume-sanket-patrikar.pdf"
+					download
+					className="download-btn"
+					title="Download PDF"
 				>
-					<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-					<polyline points="7 10 12 15 17 10" />
-					<line x1="12" y1="15" x2="12" y2="3" />
-				</svg>
-			</a>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						strokeWidth="2"
+						strokeLinecap="round"
+						strokeLinejoin="round"
+					>
+						<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+						<polyline points="7 10 12 15 17 10" />
+						<line x1="12" y1="15" x2="12" y2="3" />
+					</svg>
+				</a>
 
-			<style>{`
+				<style>{`
 				.resume-content {
 					font-family: 'Nunito Sans', 'Proxima Nova', sans-serif;
 					font-size: 11pt;
@@ -222,11 +222,6 @@ function Resume() {
 				}
 
 				.highlight {
-					text-decoration: underline;
-				}
-
-				.placeholder {
-					color: #ff0000;
 					text-decoration: underline;
 				}
 
