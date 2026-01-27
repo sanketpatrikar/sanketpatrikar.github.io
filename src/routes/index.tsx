@@ -57,8 +57,8 @@ function App() {
 							Currently
 						</p>
 						<p className="mt-2 text-base md:text-lg">
-							Software engineer at Kizora Software, shaping analytics and operational
-							tools.
+							Software engineer at Kizora Software, modernizing applications and
+							improving performance.
 						</p>
 					</div>
 					<div>
