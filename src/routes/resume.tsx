@@ -32,7 +32,7 @@ function Resume() {
 			<h2>Skills</h2>
 			<div className="skills">
 				<p>
-					<strong>Languages —</strong> HTML, CSS, JavaScript / TypeScript, Java, SQL
+					<strong>Languages —</strong> HTML, CSS, JavaScript / TypeScript, SQL
 				</p>
 				<p>
 					<strong>Frameworks &amp; Libraries —</strong> React, React Query, TanStack
