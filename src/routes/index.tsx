@@ -12,11 +12,6 @@ function App() {
 				<h1 className="font-display text-5xl md:text-7xl leading-[0.95] tracking-[-0.04em]">
 					Sanket Patrikar
 				</h1>
-				<p className="text-lg md:text-xl max-w-3xl text-muted">
-					I build simple, scalable products and delightful experiences for the web.
-					Focused on React, TypeScript, and Postgres with an eye for craft and
-					clarity.
-				</p>
 				<div className="flex flex-wrap gap-4 text-base md:text-lg">
 					<Link
 						to="/resume"
@@ -31,26 +26,15 @@ function App() {
 						Posts
 					</Link>
 				</div>
+				<p className="text-lg md:text-xl max-w-3xl text-muted">
+					I'm primarily a frontend developer with hands-on backend, database, and
+					infrastructure experience. Most recently I've led modernization work,
+					moving a product from Webpack to Vite, Node 8 to 24, and React 15 to 18,
+					with a focus on performance, ease of use, and developer experience.
+				</p>
 			</section>
 
-			<section className="grid gap-10 border-t border-[#e5e7eb] pt-10 md:grid-cols-[1.2fr_0.8fr]">
-				<div className="space-y-6">
-					<h2 className="font-display text-3xl md:text-4xl">Selected focus</h2>
-					<ul className="space-y-4 text-muted text-base md:text-lg">
-						<li>
-							<span className="text-accent">01</span> — Product-minded engineering,
-							from design systems to data-rich platforms.
-						</li>
-						<li>
-							<span className="text-accent">02</span> — Building fast, resilient
-							frontends with React, TanStack, and Vite.
-						</li>
-						<li>
-							<span className="text-accent">03</span> — Pragmatic backend work in
-							Node, Postgres, and infrastructure automation.
-						</li>
-					</ul>
-				</div>
+			<section className="flex flex-col gap-10 border-t border-[#e5e7eb] pt-10">
 				<div className="space-y-6 rounded-3xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
 					<div>
 						<p className="text-xs uppercase tracking-[0.35em] text-muted">
