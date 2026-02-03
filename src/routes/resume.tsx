@@ -63,7 +63,7 @@ function Resume() {
 						Reduced build size from <span className="highlight">35MB to 15MB</span>.
 					</li>
 					<li>
-						Upgraded React 15 to 19, refactoring core class components to hooks and
+						Upgraded React 15 to 18, refactoring core class components to hooks and
 						modernizing core modules.
 					</li>
 					<li>
