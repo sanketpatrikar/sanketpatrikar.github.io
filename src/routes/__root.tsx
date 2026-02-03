@@ -19,7 +19,7 @@ export const Route = createRootRoute({
 				rel: "preconnect",
 			},
 			{
-				href: "https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap",
+				href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100..900&family=Geist:wght@100..900&display=swap",
 				rel: "stylesheet",
 			},
 			// To help RSS readers find your feed
