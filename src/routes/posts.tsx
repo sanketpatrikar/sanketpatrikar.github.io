@@ -1,20 +1,20 @@
-import { Link, createFileRoute } from "@tanstack/react-router"
+import { Link, createFileRoute } from "@tanstack/react-router";
 
-import { Header } from "@/components/Header"
+import { Header } from "@/components/Header";
 
-const postModules = import.meta.glob("../content/posts/*.mdx", { eager: true })
+const postModules = import.meta.glob("../content/posts/*.mdx", { eager: true });
 
 const posts = Object.entries(postModules).map(([path, module]) => {
-	const slug = path.replace("../content/posts/", "").replace(".mdx", "")
+	const slug = path.replace("../content/posts/", "").replace(".mdx", "");
 
 	return {
 		date: module.frontmatter.date,
 		slug,
 		title: module.frontmatter.title,
-	}
-})
+	};
+});
 
-export const Route = createFileRoute("/posts")({ component: Posts })
+export const Route = createFileRoute("/posts")({ component: Posts });
 
 function Posts() {
 	return (
@@ -43,5 +43,5 @@ function Posts() {
 				)}
 			</div>
 		</main>
-	)
+	);
 }

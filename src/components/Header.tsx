@@ -1,9 +1,9 @@
-import { useRouter } from "@tanstack/react-router"
-import { useCallback } from "react"
+import { useRouter } from "@tanstack/react-router";
+import { useCallback } from "react";
 
 export const Header = ({ children }: { children: React.ReactNode }) => {
-	const router = useRouter()
-	const previousPage = useCallback(() => router.history.back(), [router])
+	const router = useRouter();
+	const previousPage = useCallback(() => router.history.back(), [router]);
 
 	return (
 		<header className="flex gap-6 items-center mb-10">
@@ -25,9 +25,7 @@ export const Header = ({ children }: { children: React.ReactNode }) => {
 					<path d="M19 12H5M12 19l-7-7 7-7" />
 				</svg>
 			</button>
-			<h1 className="font-display text-4xl md:text-5xl tracking-[-0.03em]">
-				{children}
-			</h1>
+			<h1 className="font-display text-4xl md:text-5xl tracking-[-0.03em]">{children}</h1>
 		</header>
-	)
-}
+	);
+};

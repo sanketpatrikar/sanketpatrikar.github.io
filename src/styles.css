@@ -1,74 +1,74 @@
 @import "tailwindcss";
 
 :root {
-  --header-offset: 3.5rem;
-  --page-bg: #f5f1eb;
-  --ink: #1b1611;
-  --muted: #5f554c;
-  --accent: #9f5e32;
-  --border: #d8cec1;
+	--header-offset: 3.5rem;
+	--page-bg: #f5f1eb;
+	--ink: #1b1611;
+	--muted: #5f554c;
+	--accent: #9f5e32;
+	--border: #d8cec1;
 }
 
 body {
-  @apply m-0;
-  background: var(--page-bg);
-  color: var(--ink);
-  font-family:
-    "Geist",
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	@apply m-0;
+	background: var(--page-bg);
+	color: var(--ink);
+	font-family:
+		"Geist",
+		system-ui,
+		-apple-system,
+		BlinkMacSystemFont,
+		"Segoe UI",
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .font-display {
-  font-family:
-    "Fraunces",
-    "Geist",
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
+	font-family:
+		"Fraunces",
+		"Geist",
+		system-ui,
+		-apple-system,
+		BlinkMacSystemFont,
+		"Segoe UI",
+		sans-serif;
 }
 
 .text-muted {
-  color: var(--muted);
+	color: var(--muted);
 }
 
 .text-accent {
-  color: var(--accent);
+	color: var(--accent);
 }
 
 .site-link {
-  text-decoration: underline;
-  text-decoration-color: var(--accent);
-  text-underline-offset: 0.3rem;
+	text-decoration: underline;
+	text-decoration-color: var(--accent);
+	text-underline-offset: 0.3rem;
 }
 
 .site-link:hover {
-  color: var(--ink);
+	color: var(--ink);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 pre {
-  padding: 1.5rem 1rem;
-  overflow-x: auto;
-  font-size: 0.875rem;
-  line-height: 1.6;
-  margin: 15px 0;
+	padding: 1.5rem 1rem;
+	overflow-x: auto;
+	font-size: 0.875rem;
+	line-height: 1.6;
+	margin: 15px 0;
 }
 
 pre code {
-  font-family: "JetBrains Mono", "Fira Code", monospace;
+	font-family: "JetBrains Mono", "Fira Code", monospace;
 }
 
 .react-tweet-theme {
-  --tweet-container-margin: 0;
+	--tweet-container-margin: 0;
 }

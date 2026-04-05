@@ -50,8 +50,8 @@ function Resume() {
 				</p>
 				<ul>
 					<li>
-						Migrated a React app from Webpack to{" "}
-						<span className="highlight">Vite</span> to speed up build times{" "}
+						Migrated a React app from Webpack to <span className="highlight">Vite</span>{" "}
+						to speed up build times{" "}
 						<span className="highlight">from 15 min to 10 seconds</span>.
 					</li>
 					<li>

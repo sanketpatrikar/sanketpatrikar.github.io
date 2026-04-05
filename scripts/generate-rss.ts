@@ -1,7 +1,8 @@
-import { Feed } from "feed";
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "fs";
-import matter from "gray-matter";
 import { join } from "path";
+
+import { Feed } from "feed";
+import matter from "gray-matter";
 
 // Site info
 const SITE_URL = "https://sanketpatrikar.github.io";
