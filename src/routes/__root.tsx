@@ -22,6 +22,7 @@ export const Route = createRootRoute({
 				href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100..900&family=Geist:wght@100..900&display=swap",
 				rel: "stylesheet",
 			},
+			// To help RSS readers find your feed
 			{
 				rel: "alternate",
 				type: "application/rss+xml",
@@ -57,7 +58,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 					}}
 				/>
 			</head>
-			<body className="min-h-screen pt-(--header-offset) px-6 antialiased md:px-10">
+			<body className="min-h-screen bg-white text-[#1f1a16] pt-(--header-offset) px-6 antialiased">
 				{children}
 				<Scripts />
 			</body>

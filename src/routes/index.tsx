@@ -1,87 +1,65 @@
-import { createFileRoute } from "@tanstack/react-router";
-
-const featuredWork = [
-	{
-		href: "/resume",
-		meta: "Career snapshot · Experience and impact",
-		title: "Resume",
-	},
-	{
-		href: "/posts",
-		meta: "Writing archive · Engineering notes",
-		title: "Posts",
-	},
-	{
-		href: "https://github.com/sanketpatrikar",
-		meta: "Open source · Side projects",
-		title: "GitHub",
-	},
-];
+import { Link, createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({ component: App });
 
 function App() {
 	return (
-		<main className="mx-auto flex w-full max-w-5xl flex-col gap-14 py-14 md:py-20">
-			<section className="grid gap-8 border-b border-[var(--border)] pb-12 md:grid-cols-[220px,1fr] md:gap-12">
-				<img
-					src="/pfp-circle.png"
-					alt="Sanket Patrikar"
-					className="h-36 w-36 rounded-full border border-[var(--border)] object-cover md:h-44 md:w-44"
-				/>
-
-				<div className="flex flex-col gap-6">
-					<div className="space-y-2">
-						<h1 className="font-display text-5xl leading-[0.95] tracking-[-0.04em] md:text-7xl">
-							Sanket Patrikar
-						</h1>
-						<p className="text-xl text-muted md:text-2xl">Software Engineer</p>
-					</div>
-
-					<p className="max-w-2xl text-base text-muted md:text-lg">
-						I build clean interfaces, modernize legacy stacks, and ship products that
-						feel fast. Most recently I led migrations across React, Vite, Node, and
-						routing infrastructure while improving developer experience and runtime
-						performance.
-					</p>
-
-					<div className="flex flex-wrap gap-x-6 gap-y-2 text-sm uppercase tracking-[0.2em] text-muted">
-						<a className="site-link" href="mailto:sanketspatrikar@gmail.com">
-							Email
-						</a>
-						<a className="site-link" href="https://x.com/patrikarsanket">
-							X
-						</a>
-						<a className="site-link" href="https://github.com/sanketpatrikar">
-							GitHub
-						</a>
-						<a className="site-link" href="https://linkedin.com/in/sanketpatrikar">
-							LinkedIn
-						</a>
-					</div>
+		<main className="mx-auto flex w-full max-w-5xl flex-col gap-12 py-16">
+			<section className="flex flex-col gap-6">
+				<p className="text-xs uppercase tracking-[0.35em] text-muted">
+					Full-stack developer
+				</p>
+				<h1 className="font-display text-5xl md:text-7xl leading-[0.95] tracking-[-0.04em]">
+					Sanket Patrikar
+				</h1>
+				<div className="flex flex-wrap gap-4 text-base md:text-lg">
+					<Link
+						to="/resume"
+						className="rounded-full border border-[#e5e7eb] px-4 py-2 transition hover:bg-[#f3f4f6]"
+					>
+						Resume
+					</Link>
+					<Link
+						to="/posts"
+						className="rounded-full border border-[#e5e7eb] px-4 py-2 transition hover:bg-[#f3f4f6]"
+					>
+						Posts
+					</Link>
 				</div>
+				<p className="text-lg md:text-xl max-w-3xl text-muted">
+					I'm primarily a frontend developer with hands-on backend, database, and
+					infrastructure experience. Most recently I've led modernization work, moving a
+					product from Webpack to Vite, Node 8 to 24, and React 15 to 18, with a focus on
+					performance, ease of use, and developer experience.
+				</p>
 			</section>
 
-			<section className="space-y-5">
-				<h2 className="text-sm uppercase tracking-[0.3em] text-muted">Selected</h2>
-				<div className="flex flex-col divide-y divide-[var(--border)] border-y border-[var(--border)]">
-					{featuredWork.map((item) => (
-						<a
-							key={item.title}
-							href={item.href}
-							className="group grid gap-2 py-5 transition-colors hover:bg-black/3 md:grid-cols-[1fr,auto] md:items-end"
-						>
-							<div>
-								<h3 className="font-display text-3xl tracking-[-0.02em]">
-									{item.title}
-								</h3>
-								<p className="text-sm text-muted md:text-base">{item.meta}</p>
-							</div>
-							<span className="text-sm uppercase tracking-[0.18em] text-muted transition group-hover:text-[var(--ink)]">
-								View
-							</span>
-						</a>
-					))}
+			<section className="flex flex-col gap-10 border-t border-[#e5e7eb] pt-10">
+				<div className="flex flex-wrap gap-4 text-base md:text-lg">
+					<a
+						href="mailto:sanketspatrikar@gmail.com"
+						className="underline decoration-[#c07b4a] underline-offset-4"
+					>
+						sanketspatrikar@gmail.com
+					</a>
+					<a
+						href="https://x.com/patrikarsanket"
+						className="underline decoration-[#c07b4a] underline-offset-4"
+					>
+						X
+					</a>
+					<a
+						href="https://github.com/sanketpatrikar"
+						className="underline decoration-[#c07b4a] underline-offset-4"
+					>
+						GitHub
+					</a>
+					<a
+						href="https://linkedin.com/in/sanketpatrikar"
+						className="underline decoration-[#c07b4a] underline-offset-4"
+					>
+						LinkedIn
+					</a>
 				</div>
 			</section>
 		</main>

@@ -1,18 +1,16 @@
 @import "tailwindcss";
 
 :root {
-	--header-offset: 3.5rem;
-	--page-bg: #f5f1eb;
-	--ink: #1b1611;
-	--muted: #5f554c;
-	--accent: #9f5e32;
-	--border: #d8cec1;
+	--header-offset: 4.5rem;
+	--page-bg: #ffffff;
+	--ink: #1f1a16;
+	--muted: #5f5f5f;
+	--accent: #c07b4a;
+	--border: #e5e7eb;
 }
 
 body {
-	@apply m-0;
-	background: var(--page-bg);
-	color: var(--ink);
+	@apply m-0 bg-white text-[#1f1a16];
 	font-family:
 		"Geist",
 		system-ui,
@@ -43,32 +41,24 @@ body {
 	color: var(--accent);
 }
 
-.site-link {
-	text-decoration: underline;
-	text-decoration-color: var(--accent);
-	text-underline-offset: 0.3rem;
-}
-
-.site-link:hover {
-	color: var(--ink);
-}
-
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+/* Shiki code blocks */
 pre {
 	padding: 1.5rem 1rem;
 	overflow-x: auto;
 	font-size: 0.875rem;
 	line-height: 1.6;
-	margin: 15px 0;
+	margin: 15px 0px;
 }
-
 pre code {
 	font-family: "JetBrains Mono", "Fira Code", monospace;
 }
 
+/* react-tweet overrides */
 .react-tweet-theme {
 	--tweet-container-margin: 0;
+	/* margin: 15px auto; */
 }
