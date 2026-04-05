@@ -1,4 +1,4 @@
-import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
+import { HeadContent, Scripts, createRootRoute, useRouterState } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
 
@@ -47,6 +47,18 @@ export const Route = createRootRoute({
 	shellComponent: RootDocument,
 });
 
+function RouteTransition({ children }: { children: React.ReactNode }) {
+	const pathname = useRouterState({
+		select: (state) => state.location.pathname,
+	});
+
+	return (
+		<div key={pathname} className="page-enter">
+			{children}
+		</div>
+	);
+}
+
 function RootDocument({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
@@ -59,7 +71,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 				/>
 			</head>
 			<body className="min-h-screen bg-white text-[#1f1a16] pt-(--header-offset) px-6 antialiased">
-				{children}
+				<RouteTransition>{children}</RouteTransition>
 				<Scripts />
 			</body>
 		</html>
