@@ -2,10 +2,6 @@ import { HeadContent, Scripts, createRootRoute, useRouterState } from "@tanstack
 
 import appCss from "../styles.css?url";
 
-const preloadReloadScript = {
-	__html: 'window.addEventListener("vite:preloadError", () => { window.location.reload() })',
-};
-
 export const Route = createRootRoute({
 	head: () => ({
 		links: [
@@ -13,6 +9,20 @@ export const Route = createRootRoute({
 				href: appCss,
 				rel: "stylesheet",
 			},
+			{
+				href: "https://fonts.googleapis.com",
+				rel: "preconnect",
+			},
+			{
+				crossOrigin: "anonymous",
+				href: "https://fonts.gstatic.com",
+				rel: "preconnect",
+			},
+			{
+				href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100..900&family=Geist:wght@100..900&display=swap",
+				rel: "stylesheet",
+			},
+			// To help RSS readers find your feed
 			{
 				rel: "alternate",
 				type: "application/rss+xml",
@@ -42,7 +52,11 @@ function RouteTransition({ children }: { children: React.ReactNode }) {
 		select: (state) => state.location.pathname,
 	});
 
-	return <div key={pathname}>{children}</div>;
+	return (
+		<div key={pathname} className="page-enter">
+			{children}
+		</div>
+	);
 }
 
 function RootDocument({ children }: { children: React.ReactNode }) {
@@ -50,12 +64,49 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 		<html lang="en">
 			<head>
 				<HeadContent />
-				<script dangerouslySetInnerHTML={preloadReloadScript} />
+				<script
+					dangerouslySetInnerHTML={{
+						__html: 'window.addEventListener("vite:preloadError", () => { window.location.reload() })',
+					}}
+				/>
 			</head>
-			<body className="min-h-screen px-6 py-10 md:px-10">
+			<body className="min-h-screen bg-white text-[#1f1a16] pt-(--header-offset) px-6 antialiased">
 				<RouteTransition>{children}</RouteTransition>
 				<Scripts />
 			</body>
 		</html>
 	);
 }
+
+const reloadOnPreloadErrorScript = `
+(function () {
+	var reload = function () {
+		window.location.reload()
+	}
+
+	window.addEventListener("vite:preloadError", function (event) {
+		event.preventDefault()
+		reload()
+	})
+
+	window.addEventListener("error", function (event) {
+		if (
+			event.message &&
+			event.message.includes("Failed to fetch dynamically imported module")
+		) {
+			event.preventDefault()
+			reload()
+		}
+	})
+
+	window.addEventListener("unhandledrejection", function (event) {
+		if (
+			event.reason &&
+			String(event.reason).includes("Failed to fetch dynamically imported module")
+		) {
+			event.preventDefault()
+			reload()
+		}
+	})
+})()
+`

@@ -1,11 +1,6 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-
-type PostModule = {
-	default: React.ComponentType;
-};
-
-const postModules = import.meta.glob<PostModule>("../content/posts/*.mdx");
+const postModules = import.meta.glob("../content/posts/*.mdx");
 
 export const Route = createFileRoute("/$slug")({
 	component: PostComponent,
@@ -26,15 +21,14 @@ function PostComponent() {
 	const path = `../content/posts/${slug}.mdx`;
 	const loader = postModules[path];
 
-	const [PostComponentNode, setPostComponentNode] = useState<React.ComponentType | null>(null);
+	const [Post, setPost] = useState(undefined);
 
 	useEffect(() => {
-		loader().then((loadedPost) => setPostComponentNode(() => loadedPost.default));
+		loader().then((Post) => setPost(() => Post.default));
 	}, [loader]);
 
-	if (!PostComponentNode) {
+	if (!Post) {
 		return null;
 	}
-
-	return <PostComponentNode />;
+	return <Post />;
 }
