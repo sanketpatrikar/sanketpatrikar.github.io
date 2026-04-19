@@ -24,6 +24,7 @@ body {
 
 .font-display {
 	font-family:
+		"Fraunces",
 		"Geist",
 		system-ui,
 		-apple-system,
@@ -60,4 +61,36 @@ pre code {
 .react-tweet-theme {
 	--tweet-container-margin: 0;
 	/* margin: 15px auto; */
+}
+
+@keyframes page-enter-blur {
+	0% {
+		opacity: 0;
+		filter: blur(8px);
+		transform: translateY(16px);
+	}
+
+	70% {
+		opacity: 1;
+		filter: blur(0);
+		transform: translateY(2px);
+	}
+
+	100% {
+		opacity: 1;
+		filter: blur(0);
+		transform: translateY(0);
+	}
+}
+
+.page-enter {
+	animation: page-enter-blur 950ms cubic-bezier(0.16, 1, 0.3, 1);
+	transform-origin: left top;
+	will-change: opacity, filter, transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.page-enter {
+		animation: none;
+	}
 }

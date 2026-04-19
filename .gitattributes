@@ -1,0 +1,17 @@
+# Normalize text files to LF in the repository and working tree.
+# This keeps line endings consistent across Windows, macOS, and Linux.
+* text=auto eol=lf
+
+# Keep native Windows line endings for command scripts that are commonly
+# edited or executed directly in Windows shells.
+*.bat eol=crlf
+*.cmd eol=crlf
+*.ps1 eol=crlf
+
+# Treat common assets as binary so Git never attempts line-ending conversion.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary

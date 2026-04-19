@@ -3,12 +3,13 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"dev": "vite dev --port 3000",
-		"build": "vite build && node scripts/generate-rss.ts && node -e \"require('fs').copyFileSync('public/resume-sanket-patrikar.pdf', 'dist/client/resume-sanket-patrikar.pdf')\"",
-		"preview": "vite preview",
-		"test": "vitest run",
-		"lint": "oxlint",
-		"format": "oxfmt --write"
+		"dev": "vp dev --port 3000",
+		"build": "vp build && node scripts/generate-rss.ts && node -e \"require('fs').copyFileSync('public/resume-sanket-patrikar.pdf', 'dist/client/resume-sanket-patrikar.pdf')\"",
+		"preview": "vp preview",
+		"test": "vp test run",
+		"lint": "vp lint",
+		"format": "vp fmt --write",
+		"prepare": "vp config"
 	},
 	"dependencies": {
 		"@mdx-js/react": "^3.1.1",
@@ -44,11 +45,11 @@
 		"feed": "^5.1.0",
 		"gray-matter": "^4.0.3",
 		"jsdom": "^27.0.0",
-		"oxfmt": "^0.20.0",
-		"oxlint": "^1.35.0",
 		"typescript": "^5.7.2",
-		"vite": "8.0.0-beta.5",
-		"vitest": "^3.0.5",
+		"vite": "catalog:",
+		"vite-plus": "catalog:",
+		"vitest": "catalog:",
 		"web-vitals": "^5.1.0"
-	}
+	},
+	"packageManager": "pnpm@10.33.0"
 }

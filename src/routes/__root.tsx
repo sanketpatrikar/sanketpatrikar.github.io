@@ -1,6 +1,6 @@
-import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router"
+import { HeadContent, Scripts, createRootRoute, useRouterState } from "@tanstack/react-router";
 
-import appCss from "../styles.css?url"
+import appCss from "../styles.css?url";
 
 export const Route = createRootRoute({
 	head: () => ({
@@ -19,7 +19,7 @@ export const Route = createRootRoute({
 				rel: "preconnect",
 			},
 			{
-				href: "https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap",
+				href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100..900&family=Geist:wght@100..900&display=swap",
 				rel: "stylesheet",
 			},
 			// To help RSS readers find your feed
@@ -45,7 +45,19 @@ export const Route = createRootRoute({
 	}),
 
 	shellComponent: RootDocument,
-})
+});
+
+function RouteTransition({ children }: { children: React.ReactNode }) {
+	const pathname = useRouterState({
+		select: (state) => state.location.pathname,
+	});
+
+	return (
+		<div key={pathname} className="page-enter">
+			{children}
+		</div>
+	);
+}
 
 function RootDocument({ children }: { children: React.ReactNode }) {
 	return (
@@ -54,16 +66,16 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 				<HeadContent />
 				<script
 					dangerouslySetInnerHTML={{
-						__html: reloadOnPreloadErrorScript,
+						__html: 'window.addEventListener("vite:preloadError", () => { window.location.reload() })',
 					}}
 				/>
 			</head>
 			<body className="min-h-screen bg-white text-[#1f1a16] pt-(--header-offset) px-6 antialiased">
-				{children}
+				<RouteTransition>{children}</RouteTransition>
 				<Scripts />
 			</body>
 		</html>
-	)
+	);
 }
 
 const reloadOnPreloadErrorScript = `
