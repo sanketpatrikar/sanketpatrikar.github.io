@@ -42,7 +42,7 @@
 		"@types/react-dom": "^19.2.0",
 		"@typescript/native-preview": "7.0.0-dev.20251228.1",
 		"@vitejs/plugin-react": "^5.0.4",
-		"feed": "^5.1.0",
+		"feed": "^5.2.1",
 		"gray-matter": "^4.0.3",
 		"jsdom": "^29.0.2",
 		"typescript": "^5.7.2",
