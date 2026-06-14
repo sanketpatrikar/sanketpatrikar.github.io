@@ -66,11 +66,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 				<HeadContent />
 				<script
 					dangerouslySetInnerHTML={{
-						__html: 'window.addEventListener("vite:preloadError", () => { window.location.reload() })',
+						__html: reloadOnPreloadErrorScript,
 					}}
 				/>
 			</head>
-			<body className="min-h-screen bg-white text-[#1f1a16] pt-(--header-offset) px-6 antialiased">
+			<body className="min-h-screen bg-white text-[#2f3340] pt-(--header-offset) px-6 antialiased">
 				<RouteTransition>{children}</RouteTransition>
 				<Scripts />
 			</body>
@@ -109,4 +109,4 @@ const reloadOnPreloadErrorScript = `
 		}
 	})
 })()
-`
+`;

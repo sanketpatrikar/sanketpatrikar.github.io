@@ -1,310 +1,152 @@
-import { createFileRoute } from "@tanstack/react-router";
-
-import { Header } from "@/components/Header";
+import { Link, createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/resume")({ component: Resume });
 
+const experience = [
+	"Contributed to modernization and feature development for a US-based waste management and recycling platform used by admins and end users for operations, monitoring, reporting, and sensor-data ingestion.",
+	"Improved developer experience, frontend performance, and maintainability in a legacy React codebase.",
+	"Migrated the legacy React application from Webpack to Vite, reducing build times from 15 minutes to 10 seconds and bundle size from 35 MB to 15 MB.",
+	"Upgraded the frontend from React 15 to React 18, refactoring core class components to hooks and modernizing legacy modules for continued development.",
+	"Migrated routing from React Router v4 to v7 and built a compatibility HOC to support gradual migration between class and function components.",
+	"Implemented lazy loading, chunking, and module caching to reduce the initial JavaScript payload and improve load times after repeat visits.",
+	"Upgraded Node.js from v8 to v24 LTS and modernized dependencies, enabling tree-shaking, reducing bundle size, lowering dependency count, and reducing vulnerable packages.",
+	"Load tested report-specific endpoints using Apache JMeter, identified concurrency bottlenecks, and contributed to shifting read-heavy workloads to a reader database instance.",
+	"Optimized high-frequency SQL queries for scheduled reports through indexing and query restructuring, reducing execution time from 3 seconds to 500 ms.",
+	"Performed preliminary frontend security testing using OWASP ZAP and contributed fixes including improved security headers, tighter CSP rules, and more secure high-value cookies.",
+	"Worked on AWS infrastructure restructuring with Terraform, adding an NLB/ALB architecture to support AWS WAF while continuing to accept TCP-based sensor payloads.",
+];
+
+const skills = [
+	["Frontend", "React, TypeScript / JavaScript, Vite, React Query, HTML, CSS"],
+	["Backend / Database", "Node.js, PostgreSQL, MySQL, Query Optimization"],
+	["Cloud / DevOps", "AWS, Docker, Terraform"],
+	["Testing / Security", "Apache JMeter, OWASP ZAP, Vitest, Playwright"],
+	["Tools", "Git"],
+];
+
 function Resume() {
 	return (
-		<>
-			<Header>Resume</Header>
+		<main className="mx-auto w-full max-w-5xl py-16">
+			<Link
+				to="/"
+				className="mb-12 inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#e5eaf5] text-[#2f3340] transition hover:bg-[#e5eaf5]"
+				aria-label="Back to home"
+			>
+				<svg
+					width="20"
+					height="20"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					strokeWidth="2"
+					strokeLinecap="round"
+					strokeLinejoin="round"
+				>
+					<path d="M19 12H5M12 19l-7-7 7-7" />
+				</svg>
+			</Link>
 
-			<div className="resume-content">
-				<div className="header-line" />
-
-				<h1 className="name">Sanket Patrikar</h1>
-				<p className="subtitle">Software Engineer</p>
-
-				<div className="contact-info">
-					<p className="location">Nagpur, Maharashtra</p>
-					<p>
-						<strong>Email:</strong>{" "}
-						<a href="mailto:sanketspatrikar@gmail.com">sanketspatrikar@gmail.com</a>
+			<section className="flex flex-col gap-10">
+				<div className="flex flex-col gap-4 border-b border-[#e5eaf5] pb-10">
+					<p className="text-xs uppercase tracking-[0.35em] text-muted">Resume</p>
+					<h1 className="font-display text-5xl leading-[0.95] tracking-[-0.04em] md:text-7xl">
+						Sanket Patrikar
+					</h1>
+					<p className="max-w-3xl text-xl leading-snug text-muted md:text-2xl">
+						Software Engineer | React, Node.js, PostgreSQL, AWS | Modernization &amp;
+						Performance
 					</p>
-					<p>
-						<strong>LinkedIn:</strong>{" "}
-						<a href="https://www.linkedin.com/in/sanketpatrikar">
+					<div className="flex flex-wrap gap-x-4 gap-y-2 text-muted">
+						<span>Nagpur, Maharashtra</span>
+						<a
+							href="mailto:sanketspatrikar@gmail.com"
+							className="underline decoration-[#a0d2eb] decoration-2 underline-offset-4"
+						>
+							sanketspatrikar@gmail.com
+						</a>
+						<a
+							href="https://linkedin.com/in/sanketpatrikar"
+							className="underline decoration-[#a0d2eb] decoration-2 underline-offset-4"
+						>
 							linkedin.com/in/sanketpatrikar
 						</a>
-					</p>
+						<a
+							href="https://sanketpatrikar.github.io"
+							className="underline decoration-[#a0d2eb] decoration-2 underline-offset-4"
+						>
+							sanketpatrikar.github.io
+						</a>
+					</div>
 				</div>
 
-				<h2>Skills</h2>
-				<div className="skills">
-					<p>
-						<strong>Languages —</strong> HTML, CSS, JavaScript / TypeScript, SQL
-					</p>
-					<p>
-						<strong>Frameworks &amp; Libraries —</strong> React, React Query, TanStack
-						Start, Vite, NodeJS, PostgreSQL
-					</p>
-					<p>
-						<strong>Tools —</strong> Git, Docker
-					</p>
-				</div>
+				<section className="grid gap-6 border-b border-[#e5eaf5] pb-10 md:grid-cols-[12rem_1fr]">
+					<h2 className="font-display text-2xl tracking-[-0.03em]">Experience</h2>
+					<div className="flex flex-col gap-5">
+						<div>
+							<div className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between">
+								<h3 className="text-xl font-semibold">Kizora Software Pvt. Ltd.</h3>
+								<p className="text-sm text-muted">Sep 2023 - Present</p>
+							</div>
+							<p className="text-muted">Software Engineer | Nagpur, Maharashtra</p>
+						</div>
+						<ul className="flex list-disc flex-col gap-3 pl-5 text-muted marker:text-[#a0d2eb]">
+							{experience.map((item) => (
+								<li key={item}>{item}</li>
+							))}
+						</ul>
+					</div>
+				</section>
 
-				<h2>Experience</h2>
-				<h3>Kizora Software Pvt. Ltd.</h3>
-				<p className="job-title">
-					Software Engineer <span className="dates">— September 2023 - Present</span>
-				</p>
-				<ul>
-					<li>
-						Migrated a React app from Webpack to <span className="highlight">Vite</span>{" "}
-						to speed up build times{" "}
-						<span className="highlight">from 15 min to 10 seconds</span>.
-					</li>
-					<li>
-						Implemented <span className="highlight">lazy loading</span> to reduce the
-						amount of code a page needs to fetch, improving page load times across the
-						site.
-					</li>
-					<li>
-						Reduced build size from <span className="highlight">35MB to 15MB</span>.
-					</li>
-					<li>
-						Upgraded React 15 to 18, refactoring core class components to hooks and
-						modernizing core modules.
-					</li>
-					<li>
-						Updated the <span className="highlight">Node</span> version from v8 to v24
-						LTS, updated packages to latest versions, and fixed breakages to ensure
-						compatibility.
-					</li>
-					<li>
-						Migrated React Router v4 to v7, building a custom HOC to bridge class and
-						function components during transition.
-					</li>
-					<li>
-						<span className="highlight">Load tested</span> backend modules with{" "}
-						<span className="highlight">JMeter</span>; identified concurrency limits
-						that were later improved, with parts moving to a reader instance.
-					</li>
-					<li>
-						<span className="highlight">Optimized high-frequency SQL queries</span> for
-						scheduled reports, reducing execution time from{" "}
-						<span className="highlight">3 seconds to 500ms</span> through index tuning
-						and query rewrites.
-					</li>
-				</ul>
+				<section className="grid gap-6 border-b border-[#e5eaf5] pb-10 md:grid-cols-[12rem_1fr]">
+					<h2 className="font-display text-2xl tracking-[-0.03em]">Technical Skills</h2>
+					<div className="flex flex-col gap-3 text-muted">
+						{skills.map(([category, items]) => (
+							<p key={category}>
+								<strong className="text-[#2f3340]">{category}:</strong> {items}
+							</p>
+						))}
+					</div>
+				</section>
 
-				<h2>Education</h2>
-				<h3>Bachelor's of Engineering in IT</h3>
-				<p className="job-title">
-					KDK College of Engineering, Nagpur{" "}
-					<span className="dates">— August 2019 - May 2023</span>
-				</p>
+				<section className="grid gap-6 md:grid-cols-[12rem_1fr]">
+					<h2 className="font-display text-2xl tracking-[-0.03em]">Education</h2>
+					<div>
+						<div className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between">
+							<h3 className="text-xl font-semibold">KDK College of Engineering</h3>
+							<p className="text-sm text-muted">Aug 2019 - May 2023</p>
+						</div>
+						<p className="text-muted">
+							Bachelor of Engineering in Information Technology | Nagpur, Maharashtra
+						</p>
+					</div>
+				</section>
 
-				<a
-					href="/resume-sanket-patrikar.pdf"
-					download
-					className="download-btn"
-					title="Download PDF"
-				>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="24"
-						height="24"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						strokeWidth="2"
-						strokeLinecap="round"
-						strokeLinejoin="round"
+				<div className="sticky bottom-6 z-50 flex justify-end pointer-events-none">
+					<a
+						href="/resume-sanket-patrikar.pdf"
+						download
+						className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#a0d2eb] text-[#2f3340] shadow-lg shadow-[#a0d2eb]/30 transition hover:bg-[#6eb8dc]"
+						title="Download PDF"
 					>
-						<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-						<polyline points="7 10 12 15 17 10" />
-						<line x1="12" y1="15" x2="12" y2="3" />
-					</svg>
-				</a>
-
-				<style>{`
-				.resume-content {
-					font-family: 'Nunito Sans', 'Proxima Nova', sans-serif;
-					font-size: 11pt;
-					line-height: 1.4;
-					color: #000;
-					max-width: 650px;
-					margin-left: calc(40px + 1.75rem);
-					padding-bottom: 80px;
-					background: #fff;
-				}
-
-				.header-line {
-					width: 100%;
-					height: 6px;
-					background: #53bb84;
-					margin-bottom: 12pt;
-				}
-
-				h1.name {
-					font-size: 30pt;
-					font-weight: 400;
-					color: #353744;
-					margin-bottom: 0;
-				}
-
-				.subtitle {
-					font-size: 18pt;
-					color: #00ab44;
-					margin-bottom: 4pt;
-				}
-
-				.contact-info {
-					color: #434343;
-					margin-bottom: 6pt;
-				}
-
-				.contact-info .location {
-					color: #666;
-				}
-
-				.contact-info strong {
-					font-weight: 700;
-				}
-
-				.contact-info a {
-					color: inherit;
-					text-decoration: none;
-				}
-
-				.contact-info a:hover {
-					text-decoration: underline;
-				}
-
-				.resume-content h2 {
-					font-size: 14pt;
-					font-weight: 700;
-					color: #00ab44;
-					margin-top: 24pt;
-					margin-bottom: 10pt;
-				}
-
-				.resume-content h3 {
-					font-size: 12pt;
-					font-weight: 700;
-					color: #353744;
-					margin-top: 10pt;
-					margin-bottom: 0;
-				}
-
-				.job-title {
-					font-size: 12pt;
-					color: #353744;
-				}
-
-				.job-title .dates {
-					font-style: italic;
-					color: #666;
-					font-size: 10pt;
-				}
-
-				.skills p {
-					margin: 4pt 0;
-				}
-
-				.skills strong {
-					font-size: 12pt;
-				}
-
-				.resume-content ul {
-					margin: 8pt 0 0 36pt;
-					padding: 0;
-				}
-
-				.resume-content li {
-					margin: 4pt 0;
-					line-height: 1.3;
-				}
-
-				.resume-content li::marker {
-					content: "‒  ";
-				}
-
-				.highlight {
-					text-decoration: underline;
-				}
-
-				.download-btn {
-					position: fixed;
-					bottom: 24px;
-					right: 24px;
-					width: 48px;
-					height: 48px;
-					background: #e5e7eb;
-					color: #353744;
-					border-radius: 50%;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-					transition: background-color 0.2s, transform 0.2s;
-					text-decoration: none;
-				}
-
-				.download-btn:hover {
-					background: #d1d5db;
-					transform: scale(1.05);
-				}
-
-				.download-btn:active {
-					transform: scale(0.95);
-				}
-
-				@media (max-width: 640px) {
-					.resume-content {
-						font-size: 10pt;
-						margin-left: 0;
-					}
-
-					h1.name {
-						font-size: 22pt;
-					}
-
-					.subtitle {
-						font-size: 14pt;
-					}
-
-					.resume-content h2 {
-						font-size: 12pt;
-						margin-top: 18pt;
-						margin-bottom: 8pt;
-					}
-
-					.resume-content h3 {
-						font-size: 11pt;
-					}
-
-					.job-title {
-						font-size: 11pt;
-					}
-
-					.job-title .dates {
-						font-size: 9pt;
-					}
-
-					.skills strong {
-						font-size: 11pt;
-					}
-
-					.resume-content ul {
-						margin-left: 20pt;
-					}
-
-					.download-btn {
-						width: 48px;
-						height: 48px;
-						bottom: 16px;
-						right: 16px;
-					}
-
-					.download-btn svg {
-						width: 20px;
-						height: 20px;
-					}
-				}
-			`}</style>
-			</div>
-		</>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="22"
+							height="22"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							strokeWidth="2"
+							strokeLinecap="round"
+							strokeLinejoin="round"
+						>
+							<title>Download PDF</title>
+							<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+							<polyline points="7 10 12 15 17 10" />
+							<line x1="12" y1="15" x2="12" y2="3" />
+						</svg>
+					</a>
+				</div>
+			</section>
+		</main>
 	);
 }

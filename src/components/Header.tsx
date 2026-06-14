@@ -10,7 +10,7 @@ export const Header = ({ children }: { children: React.ReactNode }) => {
 			<button
 				type="button"
 				onClick={previousPage}
-				className="w-10 h-10 rounded-full border border-[#e5e7eb] text-[#2e251f] flex items-center justify-center hover:bg-[#f3f4f6] transition-colors cursor-pointer"
+				className="w-10 h-10 rounded-full border border-[#e5eaf5] text-[#2f3340] flex items-center justify-center hover:bg-[#e5eaf5] transition-colors cursor-pointer"
 			>
 				<svg
 					width="20"
