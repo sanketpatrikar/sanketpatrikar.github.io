@@ -9,19 +9,6 @@ export const Route = createRootRoute({
 				href: appCss,
 				rel: "stylesheet",
 			},
-			{
-				href: "https://fonts.googleapis.com",
-				rel: "preconnect",
-			},
-			{
-				crossOrigin: "anonymous",
-				href: "https://fonts.gstatic.com",
-				rel: "preconnect",
-			},
-			{
-				href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,100..900&family=Geist:wght@100..900&display=swap",
-				rel: "stylesheet",
-			},
 			// To help RSS readers find your feed
 			{
 				rel: "alternate",
@@ -70,7 +57,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 					}}
 				/>
 			</head>
-			<body className="min-h-screen bg-white text-[#2f3340] pt-(--header-offset) px-6 antialiased">
+			<body className="min-h-screen bg-white text-[#2f3340] pt-(--header-offset) px-4 sm:px-6 antialiased">
 				<RouteTransition>{children}</RouteTransition>
 				<Scripts />
 			</body>

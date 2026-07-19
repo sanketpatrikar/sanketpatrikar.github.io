@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@font-face {
+	font-family: "Geist";
+	font-display: swap;
+	font-style: normal;
+	font-weight: 100 900;
+	src: url("/geist-variable.woff2") format("woff2");
+}
+
 :root {
 	--header-offset: 4.5rem;
 	--page-bg: #ffffff;
