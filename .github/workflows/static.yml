@@ -20,6 +20,8 @@ jobs:
             name: github-pages
             url: ${{ steps.deployment.outputs.page_url }}
         runs-on: ubuntu-latest
+        env:
+            NODE_OPTIONS: --use-system-ca
 
         steps:
             - name: checkout
