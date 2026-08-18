@@ -29,6 +29,12 @@ function App() {
 							>
 								Resume
 							</Link>
+							<Link
+								to="/posts"
+								className="rounded-full py-1.5 transition hover:bg-[#e4f2fa] hover:text-[#2c668f] sm:px-3"
+							>
+								Blog
+							</Link>
 							<a
 								href="mailto:sanketspatrikar@gmail.com"
 								className="group relative inline-flex items-center rounded-full py-1.5 pr-5 transition hover:bg-[#e4f2fa] hover:text-[#2c668f] sm:px-3 sm:pr-7"
