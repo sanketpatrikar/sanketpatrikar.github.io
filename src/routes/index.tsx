@@ -37,51 +37,27 @@ function App() {
 							</Link>
 							<a
 								href="mailto:sanketspatrikar@gmail.com"
-								className="group relative inline-flex items-center rounded-full py-1.5 pr-5 transition hover:bg-[#e4f2fa] hover:text-[#2c668f] sm:px-3 sm:pr-7"
+								className="inline-flex items-center rounded-full py-1.5 transition hover:bg-[#e4f2fa] hover:text-[#2c668f] sm:px-3"
 							>
-								Email{" "}
-								<span
-									aria-hidden="true"
-									className="absolute right-2 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100 sm:right-3"
-								>
-									↗
-								</span>
+								Email
 							</a>
 							<a
 								href="https://x.com/patrikarsanket"
-								className="group relative inline-flex items-center rounded-full py-1.5 pr-5 transition hover:bg-[#e4f2fa] hover:text-[#2c668f] sm:px-3 sm:pr-7"
+								className="inline-flex items-center rounded-full py-1.5 transition hover:bg-[#e4f2fa] hover:text-[#2c668f] sm:px-3"
 							>
-								Twitter{" "}
-								<span
-									aria-hidden="true"
-									className="absolute right-2 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100 sm:right-3"
-								>
-									↗
-								</span>
+								Twitter
 							</a>
 							<a
 								href="https://github.com/sanketpatrikar"
-								className="group relative inline-flex items-center rounded-full py-1.5 pr-5 transition hover:bg-[#e4f2fa] hover:text-[#2c668f] sm:px-3 sm:pr-7"
+								className="inline-flex items-center rounded-full py-1.5 transition hover:bg-[#e4f2fa] hover:text-[#2c668f] sm:px-3"
 							>
-								GitHub{" "}
-								<span
-									aria-hidden="true"
-									className="absolute right-2 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100 sm:right-3"
-								>
-									↗
-								</span>
+								GitHub
 							</a>
 							<a
 								href="https://linkedin.com/in/sanketpatrikar"
-								className="group relative inline-flex items-center rounded-full py-1.5 pr-5 transition hover:bg-[#e4f2fa] hover:text-[#2c668f] sm:px-3 sm:pr-7"
+								className="inline-flex items-center rounded-full py-1.5 transition hover:bg-[#e4f2fa] hover:text-[#2c668f] sm:px-3"
 							>
-								LinkedIn{" "}
-								<span
-									aria-hidden="true"
-									className="absolute right-2 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100 sm:right-3"
-								>
-									↗
-								</span>
+								LinkedIn
 							</a>
 						</div>
 					</div>
