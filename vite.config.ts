@@ -6,56 +6,15 @@ import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkMdxFrontmatter from "remark-mdx-frontmatter";
-import { defineConfig } from "vite-plus";
-import viteTsConfigPaths from "vite-tsconfig-paths";
+import { defineConfig } from "vite";
 
 const config = defineConfig({
-	staged: {
-		"*": "vp check --fix",
-	},
-	fmt: {
-		ignorePatterns: ["node_modules", "dist", "build", ".tanstack", "routeTree.gen.ts"],
-		indentWidth: 4,
-		lineWidth: 100,
-		semi: true,
-		trailingCommas: "es5",
-		bracketSpacing: true,
-		experimentalSortImports: {
-			groupSpecifiers: true,
-			ignoreCase: true,
-			ignoreDeclarationSort: true,
-		},
-		experimentalSortPackageJson: true,
-		tabWidth: 4,
-		useTabs: true,
-	},
-	lint: {
-		categories: {
-			correctness: "error",
-			suspicious: "error",
-			style: "off",
-			perf: "warn",
-		},
-		rules: {
-			"react-in-jsx-scope": "off",
-		},
-		plugins: ["react", "jsx-a11y", "react-perf", "import", "promise"],
-		env: {
-			browser: true,
-		},
-		ignorePatterns: ["node_modules", "dist", "build", ".tanstack", "routeTree.gen.ts"],
-		options: {
-			typeAware: true,
-			typeCheck: true,
-		},
-	},
 	assetsInclude: ["**/*.pdf"],
+	resolve: {
+		tsconfigPaths: true,
+	},
 	plugins: [
 		devtools(),
-		// This is the plugin that enables path aliases
-		viteTsConfigPaths({
-			projects: ["./tsconfig.json"],
-		}),
 		tailwindcss(),
 		tanstackStart({
 			prerender: {
