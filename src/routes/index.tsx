@@ -23,12 +23,12 @@ function App() {
 							Software Engineer based in Nagpur, India
 						</p>
 						<div className="mt-3 flex flex-nowrap justify-center gap-3 whitespace-nowrap text-[clamp(0.75rem,3.8vw,1rem)] text-[#3b82b6] sm:justify-start sm:text-lg">
-							<Link
-								to="/resume"
+							<a
+								href="/resume-sanket-patrikar.pdf"
 								className="rounded-full py-1.5 transition hover:bg-[#e4f2fa] hover:text-[#2c668f] sm:px-3"
 							>
 								Resume
-							</Link>
+							</a>
 							<Link
 								to="/posts"
 								className="rounded-full py-1.5 transition hover:bg-[#e4f2fa] hover:text-[#2c668f] sm:px-3"

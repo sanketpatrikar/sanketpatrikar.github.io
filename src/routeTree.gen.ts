@@ -13,7 +13,6 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as SlugRouteImport } from './routes/$slug'
 import { Route as NotFoundRouteImport } from './routes/NotFound'
 import { Route as PostsRouteImport } from './routes/posts'
-import { Route as ResumeRouteImport } from './routes/resume'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -35,25 +34,18 @@ const PostsRoute = PostsRouteImport.update({
   path: '/posts',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ResumeRoute = ResumeRouteImport.update({
-  id: '/resume',
-  path: '/resume',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$slug': typeof SlugRoute
   '/NotFound': typeof NotFoundRoute
   '/posts': typeof PostsRoute
-  '/resume': typeof ResumeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$slug': typeof SlugRoute
   '/NotFound': typeof NotFoundRoute
   '/posts': typeof PostsRoute
-  '/resume': typeof ResumeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -61,14 +53,13 @@ export interface FileRoutesById {
   '/$slug': typeof SlugRoute
   '/NotFound': typeof NotFoundRoute
   '/posts': typeof PostsRoute
-  '/resume': typeof ResumeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/$slug' | '/NotFound' | '/posts' | '/resume'
+  fullPaths: '/' | '/$slug' | '/NotFound' | '/posts'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/$slug' | '/NotFound' | '/posts' | '/resume'
-  id: '__root__' | '/' | '/$slug' | '/NotFound' | '/posts' | '/resume'
+  to: '/' | '/$slug' | '/NotFound' | '/posts'
+  id: '__root__' | '/' | '/$slug' | '/NotFound' | '/posts'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -76,7 +67,6 @@ export interface RootRouteChildren {
   SlugRoute: typeof SlugRoute
   NotFoundRoute: typeof NotFoundRoute
   PostsRoute: typeof PostsRoute
-  ResumeRoute: typeof ResumeRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -109,13 +99,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PostsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/resume': {
-      id: '/resume'
-      path: '/resume'
-      fullPath: '/resume'
-      preLoaderRoute: typeof ResumeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -124,7 +107,6 @@ const rootRouteChildren: RootRouteChildren = {
   SlugRoute: SlugRoute,
   NotFoundRoute: NotFoundRoute,
   PostsRoute: PostsRoute,
-  ResumeRoute: ResumeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
