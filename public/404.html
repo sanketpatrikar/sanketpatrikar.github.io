@@ -6,6 +6,12 @@
     <meta name="robots" content="noindex" />
     <title>Page not found | Sanket Patrikar</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script>
+      try {
+        const theme = localStorage.getItem("color-theme");
+        if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
+      } catch {}
+    </script>
     <style>
       @font-face {
         font-family: Geist;
@@ -16,11 +22,38 @@
       * {
         box-sizing: border-box;
       }
+      :root {
+        color-scheme: light dark;
+        --bg: #fff;
+        --ink: #2f3340;
+        --heading: #171923;
+        --muted: #666b78;
+        --accent: #3182b5;
+        --accent-strong: #24658c;
+      }
+      :root[data-theme="dark"] {
+        --bg: #0b0d11;
+        --ink: #d8dce5;
+        --heading: #f3f5f8;
+        --muted: #999faa;
+        --accent: #72c7ec;
+        --accent-strong: #a4ddf4;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme]) {
+          --bg: #0b0d11;
+          --ink: #d8dce5;
+          --heading: #f3f5f8;
+          --muted: #999faa;
+          --accent: #72c7ec;
+          --accent-strong: #a4ddf4;
+        }
+      }
       body {
         margin: 0;
         padding: 0 1.5rem;
-        background: #fff;
-        color: #2f3340;
+        background: var(--bg);
+        color: var(--ink);
         font-family: Geist, system-ui, sans-serif;
       }
       main {
@@ -33,33 +66,33 @@
       }
       .code {
         margin: 0;
-        color: #3b82b6;
+        color: var(--accent);
         font-size: 0.875rem;
         font-weight: 600;
         letter-spacing: 0.3em;
       }
       .title {
         margin: 0.75rem 0 0;
-        color: #171923;
+        color: var(--heading);
         font-size: clamp(2.25rem, 8vw, 3.75rem);
         letter-spacing: -0.04em;
       }
       .description {
         max-width: 36rem;
         margin: 1rem 0 0;
-        color: #666b78;
+        color: var(--muted);
         font-size: 1.25rem;
         line-height: 1.6;
       }
       a {
         width: max-content;
         margin-top: 2rem;
-        color: #3b82b6;
+        color: var(--accent);
         font-size: 1.125rem;
         text-decoration: none;
       }
       a:hover {
-        color: #2c668f;
+        color: var(--accent-strong);
       }
     </style>
   </head>

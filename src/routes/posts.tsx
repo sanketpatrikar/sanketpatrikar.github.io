@@ -36,7 +36,7 @@ export const Route = createFileRoute("/posts")({
 
 function Posts() {
 	return (
-		<main className="mx-auto w-full max-w-4xl py-16">
+		<main className="mx-auto w-full max-w-4xl px-6 py-12 sm:px-10 md:mx-0 md:px-12 md:py-20 lg:px-16">
 			<Header>Posts</Header>
 			<div className="space-y-5">
 				{posts.length > 0 ? (

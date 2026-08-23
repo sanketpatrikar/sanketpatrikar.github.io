@@ -1,7 +1,9 @@
 import { HeadContent, Scripts, createRootRoute, useRouterState } from "@tanstack/react-router";
 
 import { NotFound } from "@/components/NotFound";
+import { SiteNavigation } from "@/components/SiteNavigation";
 import { getSeoMeta } from "@/lib/seo";
+import { themeScript } from "@/lib/theme";
 
 import appCss from "../styles.css?url";
 
@@ -55,8 +57,10 @@ function RouteTransition({ children }: { children: React.ReactNode }) {
 
 function RootDocument({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
 			<head>
+				<meta id="theme-color" name="theme-color" content="#ffffff" />
+				<script dangerouslySetInnerHTML={{ __html: themeScript }} />
 				<HeadContent />
 				<script
 					dangerouslySetInnerHTML={{
@@ -64,8 +68,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 					}}
 				/>
 			</head>
-			<body className="min-h-screen bg-white text-[#2f3340] pt-(--header-offset) px-4 sm:px-6 antialiased">
-				<RouteTransition>{children}</RouteTransition>
+			<body className="min-h-screen antialiased">
+				<SiteNavigation />
+				<div className="md:pl-72">
+					<RouteTransition>{children}</RouteTransition>
+				</div>
 				<Scripts />
 			</body>
 		</html>

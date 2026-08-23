@@ -1,16 +1,15 @@
 import { useRouter } from "@tanstack/react-router";
-import { useCallback } from "react";
 
 export const Header = ({ children }: { children: React.ReactNode }) => {
 	const router = useRouter();
-	const previousPage = useCallback(() => router.history.back(), [router]);
 
 	return (
 		<header className="flex gap-6 items-center mb-10">
 			<button
 				type="button"
-				onClick={previousPage}
-				className="w-10 h-10 rounded-full border border-[#e5eaf5] text-[#2f3340] flex items-center justify-center hover:bg-[#e5eaf5] transition-colors cursor-pointer"
+				onClick={() => router.history.back()}
+				aria-label="Go back"
+				className="flex size-10 cursor-pointer items-center justify-center rounded-full border border-[var(--border)] text-[var(--heading)] transition-colors hover:bg-[var(--accent-soft)]"
 			>
 				<svg
 					width="20"
@@ -25,7 +24,9 @@ export const Header = ({ children }: { children: React.ReactNode }) => {
 					<path d="M19 12H5M12 19l-7-7 7-7" />
 				</svg>
 			</button>
-			<h1 className="font-display text-4xl md:text-5xl tracking-[-0.03em]">{children}</h1>
+			<h1 className="font-display text-4xl tracking-[-0.03em] text-[var(--heading)] md:text-5xl">
+				{children}
+			</h1>
 		</header>
 	);
 };

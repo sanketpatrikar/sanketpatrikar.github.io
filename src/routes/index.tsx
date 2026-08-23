@@ -17,84 +17,46 @@ export const Route = createFileRoute("/")({
 
 function App() {
 	return (
-		<main className="mx-auto flex w-full max-w-4xl flex-col gap-12 pb-16 pt-10 md:gap-16 md:pb-20 md:pt-12">
-			<section className="flex flex-col gap-6 md:gap-8">
-				<div className="flex flex-col items-center gap-7 text-center sm:flex-row sm:items-center sm:gap-10 sm:text-left md:gap-12">
-					<div className="relative h-40 w-40 shrink-0 overflow-hidden rounded-full md:h-44 md:w-44">
-						<picture className="block h-full w-full">
-							<source srcSet="/sanket-patrikar.avif" type="image/avif" />
-							<img
-								src="/sanket-patrikar.webp"
-								alt="Sanket Patrikar"
-								width="512"
-								height="512"
-								fetchPriority="high"
-								decoding="async"
-								className="h-full w-full object-cover object-[50%_24%]"
-							/>
-						</picture>
-					</div>
-
-					<div className="flex flex-col gap-2">
-						<h1 className="whitespace-nowrap text-[clamp(1.25rem,6vw,2.25rem)] leading-tight tracking-[-0.045em] text-[#171923] md:text-5xl">
-							Hey, I&apos;m <strong className="font-bold">Sanket Patrikar</strong>
-						</h1>
-						<p className="text-xl leading-snug text-muted md:text-[1.7rem]">
-							Software Engineer based in Nagpur, India
-						</p>
-						<div className="mt-3 flex flex-nowrap justify-center gap-3 whitespace-nowrap text-[clamp(0.75rem,3.8vw,1rem)] text-[#3b82b6] sm:justify-start sm:text-lg">
-							<a
-								href="/resume-sanket-patrikar.pdf"
-								className="rounded-full py-1.5 transition hover:bg-[#e4f2fa] hover:text-[#2c668f] sm:px-3"
-							>
-								Resume
-							</a>
-							<Link
-								to="/posts"
-								className="rounded-full py-1.5 transition hover:bg-[#e4f2fa] hover:text-[#2c668f] sm:px-3"
-							>
-								Blog
-							</Link>
-							<a
-								href="mailto:sanketspatrikar@gmail.com"
-								className="inline-flex items-center rounded-full py-1.5 transition hover:bg-[#e4f2fa] hover:text-[#2c668f] sm:px-3"
-							>
-								Email
-							</a>
-							<a
-								href="https://x.com/patrikarsanket"
-								className="inline-flex items-center rounded-full py-1.5 transition hover:bg-[#e4f2fa] hover:text-[#2c668f] sm:px-3"
-							>
-								Twitter
-							</a>
-							<a
-								href="https://github.com/sanketpatrikar"
-								className="inline-flex items-center rounded-full py-1.5 transition hover:bg-[#e4f2fa] hover:text-[#2c668f] sm:px-3"
-							>
-								GitHub
-							</a>
-							<a
-								href="https://linkedin.com/in/sanketpatrikar"
-								className="inline-flex items-center rounded-full py-1.5 transition hover:bg-[#e4f2fa] hover:text-[#2c668f] sm:px-3"
-							>
-								LinkedIn
-							</a>
-						</div>
-					</div>
+		<main className="mx-auto w-full max-w-3xl px-6 pb-20 pt-12 sm:px-10 md:mx-0 md:px-12 md:pt-20 lg:px-16">
+			<section>
+				<div className="mb-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
+					<a href="https://x.com/patrikarsanket" className="nav-link" rel="me">
+						X / Twitter
+					</a>
+					<a href="https://github.com/sanketpatrikar" className="nav-link" rel="me">
+						GitHub
+					</a>
+					<a href="https://linkedin.com/in/sanketpatrikar" className="nav-link" rel="me">
+						LinkedIn
+					</a>
 				</div>
 
-				<div className="max-w-[52rem] border-t border-[#e5eaf5] pt-6 md:pt-8">
-					<div className="space-y-4 text-lg leading-[1.7] text-muted md:text-xl">
-						<p>
-							I enjoy taking on the unglamorous parts of software: understanding a mature
-							codebase, finding the real bottleneck, and making the next change easier than
-							the last.
-						</p>
-						<p>
-							I care about clear interfaces, fast feedback loops, and infrastructure that
-							supports the product instead of getting in its way.
-						</p>
-					</div>
+				<h1 className="font-display text-4xl leading-tight tracking-[-0.035em] text-[var(--heading)] sm:text-5xl">
+					Hi, I&apos;m Sanket Patrikar.
+				</h1>
+
+				<div className="mt-7 space-y-5 text-lg leading-[1.65] sm:text-xl">
+					<p>
+						I&apos;m a software engineer based in Nagpur, India. I enjoy the unglamorous
+						parts of software: understanding a mature codebase, finding the real bottleneck,
+						and making the next change easier than the last.
+					</p>
+					<p className="text-muted">
+						I care about clear interfaces, fast feedback loops, and infrastructure that
+						supports the product instead of getting in its way.
+					</p>
+				</div>
+
+				<div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-[var(--border)] pt-6 text-sm font-semibold">
+					<a href="mailto:sanketspatrikar@gmail.com" className="text-accent hover:text-[var(--accent-strong)]">
+						Say hello
+					</a>
+					<Link to="/posts" className="nav-link">
+						Read posts
+					</Link>
+					<a href="/resume-sanket-patrikar.pdf" className="nav-link">
+						Resume
+					</a>
 				</div>
 			</section>
 		</main>
