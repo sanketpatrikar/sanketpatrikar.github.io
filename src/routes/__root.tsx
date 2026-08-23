@@ -11,6 +11,20 @@ export const Route = createRootRoute({
 	head: () => ({
 		links: [
 			{
+				rel: "preload",
+				href: "/fonts/inter-latin.woff2",
+				as: "font",
+				type: "font/woff2",
+				crossOrigin: "anonymous",
+			},
+			{
+				rel: "preload",
+				href: "/fonts/fraunces-latin.woff2",
+				as: "font",
+				type: "font/woff2",
+				crossOrigin: "anonymous",
+			},
+			{
 				href: appCss,
 				rel: "stylesheet",
 			},
@@ -70,7 +84,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			</head>
 			<body className="min-h-screen antialiased">
 				<SiteNavigation />
-				<div className="md:pl-72">
+				<div className="site-content md:ml-72">
 					<RouteTransition>{children}</RouteTransition>
 				</div>
 				<Scripts />

@@ -1,11 +1,19 @@
 @import "tailwindcss";
 
 @font-face {
-	font-family: "Geist";
+	font-family: "Inter";
 	font-display: swap;
 	font-style: normal;
 	font-weight: 100 900;
-	src: url("/geist-variable.woff2") format("woff2");
+	src: url("/fonts/inter-latin.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Fraunces";
+	font-display: swap;
+	font-style: normal;
+	font-weight: 100 900;
+	src: url("/fonts/fraunces-latin.woff2") format("woff2");
 }
 
 :root {
@@ -13,12 +21,11 @@
 	--ink: #2f3340;
 	--heading: #171923;
 	--muted: #666b78;
-	--accent: #3182b5;
+	--accent: #2d78a4;
 	--accent-strong: #24658c;
 	--accent-soft: #e7f3f9;
 	--border: #e5eaf5;
 	--surface: #f3f5f8;
-	--sidebar-bg: #fbfbfc;
 	--nav-bg: rgb(255 255 255 / 82%);
 	color-scheme: light;
 }
@@ -33,7 +40,6 @@
 	--accent-soft: #172a35;
 	--border: #262a33;
 	--surface: #171a20;
-	--sidebar-bg: #0f1116;
 	--nav-bg: rgb(11 13 17 / 82%);
 	color-scheme: dark;
 }
@@ -49,7 +55,6 @@
 		--accent-soft: #172a35;
 		--border: #262a33;
 		--surface: #171a20;
-		--sidebar-bg: #0f1116;
 		--nav-bg: rgb(11 13 17 / 82%);
 		color-scheme: dark;
 	}
@@ -64,7 +69,7 @@ body {
 	background: var(--page-bg);
 	color: var(--ink);
 	font-family:
-		"Geist",
+		"Inter",
 		system-ui,
 		-apple-system,
 		BlinkMacSystemFont,
@@ -76,9 +81,23 @@ body {
 
 .font-display {
 	font-family:
-		Georgia,
-		"Times New Roman",
+		"Fraunces",
 		serif;
+}
+
+@media (min-width: 48rem) {
+	html,
+	body {
+		height: 100%;
+		overflow: hidden;
+	}
+
+	.site-content {
+		height: 100dvh;
+		overflow-y: auto;
+		overscroll-behavior-y: contain;
+		scrollbar-gutter: stable;
+	}
 }
 
 .text-muted {
@@ -96,6 +115,10 @@ body {
 
 .nav-link:hover {
 	color: var(--accent);
+}
+
+.projects-section {
+	display: none;
 }
 
 .theme-icon {

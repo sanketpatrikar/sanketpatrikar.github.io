@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
+import { SocialLinks } from "@/components/SocialLinks";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 export function SiteNavigation() {
@@ -31,9 +32,9 @@ export function SiteNavigation() {
 
 	return (
 		<>
-			<aside className="fixed inset-y-0 left-0 z-30 hidden w-72 flex-col border-r border-[var(--border)] bg-[var(--sidebar-bg)] p-8 md:flex">
+			<aside className="fixed inset-y-0 left-0 z-30 hidden w-72 flex-col bg-[var(--page-bg)] p-8 md:flex">
 				<Link to="/" className="group block w-fit">
-					<picture className="block size-16 overflow-hidden rounded-full border border-[var(--border)] bg-[var(--surface)]">
+					<picture className="block size-16 overflow-hidden rounded-full bg-[var(--surface)]">
 						<source srcSet="/sanket-patrikar.avif" type="image/avif" />
 						<img
 							src="/sanket-patrikar.webp"
@@ -53,9 +54,6 @@ export function SiteNavigation() {
 				</Link>
 
 				<nav aria-label="Primary" className="mt-12 flex flex-col items-start gap-5 font-semibold">
-					<Link to="/" activeOptions={{ exact: true }} className="nav-link">
-						Home
-					</Link>
 					<Link to="/posts" className="nav-link">
 						Posts
 					</Link>
@@ -64,24 +62,14 @@ export function SiteNavigation() {
 					</a>
 				</nav>
 
-				<div className="mt-auto space-y-5 text-sm">
-					<div className="flex gap-4 text-muted">
-						<a href="https://github.com/sanketpatrikar" className="nav-link" rel="me">
-							GitHub
-						</a>
-						<a href="https://linkedin.com/in/sanketpatrikar" className="nav-link" rel="me">
-							LinkedIn
-						</a>
-					</div>
-					<a href="https://x.com/patrikarsanket" className="nav-link block w-fit" rel="me">
-						@patrikarsanket
-					</a>
+				<div className="mt-auto text-sm">
+					<SocialLinks />
 				</div>
 			</aside>
 
-			<header className="sticky top-0 z-30 flex h-20 items-center justify-between border-b border-[var(--border)] bg-[var(--nav-bg)] px-5 backdrop-blur-xl md:hidden">
+			<header className="sticky top-0 z-30 flex h-20 items-center justify-between bg-[var(--nav-bg)] px-5 backdrop-blur-xl md:hidden">
 				<Link to="/" className="flex items-center gap-3">
-					<picture className="block size-11 overflow-hidden rounded-full border border-[var(--border)] bg-[var(--surface)]">
+					<picture className="block size-11 overflow-hidden rounded-full bg-[var(--surface)]">
 						<source srcSet="/sanket-patrikar.avif" type="image/avif" />
 						<img
 							src="/sanket-patrikar.webp"
@@ -122,7 +110,7 @@ export function SiteNavigation() {
 				<div className="flex min-h-dvh flex-col px-6 py-5">
 					<div className="flex h-11 items-center justify-between">
 						<Link to="/" onClick={closeMenu} className="flex items-center gap-3">
-							<picture className="block size-11 overflow-hidden rounded-full border border-[var(--border)] bg-[var(--surface)]">
+							<picture className="block size-11 overflow-hidden rounded-full bg-[var(--surface)]">
 								<source srcSet="/sanket-patrikar.avif" type="image/avif" />
 								<img
 									src="/sanket-patrikar.webp"
@@ -152,9 +140,6 @@ export function SiteNavigation() {
 					</div>
 
 					<nav aria-label="Mobile" className="mt-16 flex flex-col items-start gap-7 text-2xl font-semibold">
-						<Link to="/" activeOptions={{ exact: true }} onClick={closeMenu} className="nav-link">
-							Home
-						</Link>
 						<Link to="/posts" onClick={closeMenu} className="nav-link">
 							Posts
 						</Link>
@@ -164,20 +149,7 @@ export function SiteNavigation() {
 					</nav>
 
 					<div className="mt-auto pb-4 text-sm text-muted">
-						<div className="mb-6 flex flex-wrap gap-x-6 gap-y-3">
-							<a href="mailto:sanketspatrikar@gmail.com" className="nav-link">
-								Email
-							</a>
-							<a href="https://github.com/sanketpatrikar" className="nav-link" rel="me">
-								GitHub
-							</a>
-							<a href="https://linkedin.com/in/sanketpatrikar" className="nav-link" rel="me">
-								LinkedIn
-							</a>
-						</div>
-						<a href="https://x.com/patrikarsanket" className="nav-link" rel="me">
-							@patrikarsanket
-						</a>
+						<SocialLinks />
 					</div>
 				</div>
 			</dialog>

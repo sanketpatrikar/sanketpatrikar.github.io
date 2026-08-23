@@ -1,5 +1,6 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 
+import { SocialLinks } from "@/components/SocialLinks";
 import { getCanonicalLink, homeStructuredData } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
@@ -17,46 +18,49 @@ export const Route = createFileRoute("/")({
 
 function App() {
 	return (
-		<main className="mx-auto w-full max-w-3xl px-6 pb-20 pt-12 sm:px-10 md:mx-0 md:px-12 md:pt-20 lg:px-16">
+		<main className="mx-auto w-full max-w-[44rem] px-6 pb-24 pt-12 sm:px-10 md:mx-0 md:px-12 md:pt-16 lg:px-16">
 			<section>
-				<div className="mb-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
-					<a href="https://x.com/patrikarsanket" className="nav-link" rel="me">
-						X / Twitter
-					</a>
-					<a href="https://github.com/sanketpatrikar" className="nav-link" rel="me">
-						GitHub
-					</a>
-					<a href="https://linkedin.com/in/sanketpatrikar" className="nav-link" rel="me">
-						LinkedIn
-					</a>
-				</div>
+				<SocialLinks className="mb-8" />
 
-				<h1 className="font-display text-4xl leading-tight tracking-[-0.035em] text-[var(--heading)] sm:text-5xl">
+				<h1 className="font-display text-[2.15rem] leading-tight tracking-[-0.035em] text-[var(--heading)] sm:text-[2.6rem]">
 					Hi, I&apos;m Sanket Patrikar.
 				</h1>
 
-				<div className="mt-7 space-y-5 text-lg leading-[1.65] sm:text-xl">
+				<div className="mt-6 space-y-5 text-base leading-[1.55] sm:text-lg">
 					<p>
-						I&apos;m a software engineer based in Nagpur, India. I enjoy the unglamorous
-						parts of software: understanding a mature codebase, finding the real bottleneck,
-						and making the next change easier than the last.
+						<strong className="font-semibold text-[var(--heading)]">Right now,</strong> I
+						spend most of my time building software and making old systems easier to work
+						with. Alongside that, I tinker with tools, chase oddly specific bugs, and write
+						when I have something worth saying.
 					</p>
 					<p className="text-muted">
-						I care about clear interfaces, fast feedback loops, and infrastructure that
-						supports the product instead of getting in its way.
+						Based in Nagpur, India. Usually somewhere between code, docs, and a terminal.
 					</p>
 				</div>
+			</section>
 
-				<div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-[var(--border)] pt-6 text-sm font-semibold">
-					<a href="mailto:sanketspatrikar@gmail.com" className="text-accent hover:text-[var(--accent-strong)]">
-						Say hello
-					</a>
-					<Link to="/posts" className="nav-link">
-						Read posts
+			<section className="projects-section mt-24" aria-labelledby="projects-heading">
+				<h2 id="projects-heading" className="text-xs font-semibold uppercase tracking-[0.3em] text-muted">
+					Current projects
+				</h2>
+				<p className="mt-6 text-lg text-muted">Projects will appear here when they are ready.</p>
+			</section>
+
+			<section className="mt-24" aria-labelledby="posts-heading">
+				<div className="flex items-center justify-between gap-6">
+					<h2 id="posts-heading" className="text-xs font-semibold uppercase tracking-[0.3em] text-muted">
+						Posts
+					</h2>
+					<Link to="/posts" className="text-sm text-accent hover:text-[var(--accent-strong)]">
+						All posts <span aria-hidden="true">→</span>
 					</Link>
-					<a href="/resume-sanket-patrikar.pdf" className="nav-link">
-						Resume
-					</a>
+				</div>
+
+				<div className="mt-8">
+					<p className="font-display text-2xl text-[var(--heading)]">Coming soon.</p>
+					<p className="mt-2 max-w-lg leading-relaxed text-muted">
+						Notes, ideas, and things worth writing down will show up here.
+					</p>
 				</div>
 			</section>
 		</main>

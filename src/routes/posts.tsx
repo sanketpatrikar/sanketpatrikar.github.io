@@ -58,7 +58,7 @@ function Posts() {
 						</div>
 					))
 				) : (
-					<div className="text-muted">Nothing here yet.</div>
+					<div className="text-muted">Coming soon.</div>
 				)}
 			</div>
 		</main>
