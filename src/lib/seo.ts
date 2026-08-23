@@ -3,7 +3,7 @@ export const siteTitle = "Sanket Patrikar | Software Engineer";
 export const siteDescription =
   "Software engineer based in Nagpur, India, focused on clear interfaces, fast feedback loops, and maintainable web systems.";
 
-const socialImage = `${siteUrl}/og-image.png`;
+const socialImage = `${siteUrl}/og-image-f3932322.png`;
 
 export const homeStructuredData = {
   "@context": "https://schema.org",
