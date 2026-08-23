@@ -5,7 +5,7 @@ export const Route = createFileRoute("/")({ component: App });
 function App() {
 	return (
 		<main className="mx-auto flex w-full max-w-4xl flex-col gap-12 pb-16 pt-10 md:gap-16 md:pb-20 md:pt-12">
-			<section className="flex flex-col gap-10 md:gap-12">
+			<section className="flex flex-col gap-6 md:gap-8">
 				<div className="flex flex-col items-center gap-7 text-center sm:flex-row sm:items-center sm:gap-10 sm:text-left md:gap-12">
 					<div className="relative h-40 w-40 shrink-0 overflow-hidden rounded-full md:h-44 md:w-44">
 						<img
@@ -63,11 +63,19 @@ function App() {
 					</div>
 				</div>
 
-				<p className="max-w-[52rem] text-xl leading-[1.65] text-muted md:text-[1.4rem]">
-					I build and modernize web applications across React, Node.js, PostgreSQL, AWS,
-					Docker, and Terraform, with a focus on performance, maintainability, and systems
-					that are pleasant to work with.
-				</p>
+				<div className="max-w-[52rem] border-t border-[#e5eaf5] pt-6 md:pt-8">
+					<div className="space-y-4 text-lg leading-[1.7] text-muted md:text-xl">
+						<p>
+							I enjoy taking on the unglamorous parts of software: understanding a mature
+							codebase, finding the real bottleneck, and making the next change easier than
+							the last.
+						</p>
+						<p>
+							I care about clear interfaces, fast feedback loops, and infrastructure that
+							supports the product instead of getting in its way.
+						</p>
+					</div>
+				</div>
 			</section>
 		</main>
 	);
