@@ -5,7 +5,7 @@ import { Feed } from "feed";
 import matter from "gray-matter";
 
 // Site info
-const SITE_URL = "https://sanketpatrikar.github.io";
+const SITE_URL = "https://sanketpatrikar.com";
 const AUTHOR = {
 	name: "Sanket Patrikar",
 	email: "sanketspatrikar@gmail.com",

@@ -25,7 +25,7 @@ const config = defineConfig({
 			},
 			sitemap: {
 				enabled: true,
-				host: "https://sanketpatrikar.github.io",
+				host: "https://sanketpatrikar.com",
 			},
 		}),
 		viteReact(),
