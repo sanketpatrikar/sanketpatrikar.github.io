@@ -1,8 +1,16 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 
 import { Header } from "@/components/Header";
+import { getCanonicalLink, getSeoMeta } from "@/lib/seo";
 
-const postModules = import.meta.glob("../content/posts/*.mdx", { eager: true });
+type PostModule = {
+	frontmatter: {
+		date: string;
+		title: string;
+	};
+};
+
+const postModules = import.meta.glob<PostModule>("../content/posts/*.mdx", { eager: true });
 
 const posts = Object.entries(postModules).map(([path, module]) => {
 	const slug = path.replace("../content/posts/", "").replace(".mdx", "");
@@ -14,7 +22,17 @@ const posts = Object.entries(postModules).map(([path, module]) => {
 	};
 });
 
-export const Route = createFileRoute("/posts")({ component: Posts });
+export const Route = createFileRoute("/posts")({
+	component: Posts,
+	head: () => ({
+		links: [getCanonicalLink("/posts")],
+		meta: getSeoMeta({
+			title: "Posts | Sanket Patrikar",
+			description: "Writing by Sanket Patrikar about software engineering and building for the web.",
+			path: "/posts",
+		}),
+	}),
+});
 
 function Posts() {
 	return (
@@ -31,7 +49,8 @@ function Posts() {
 								{post.date}
 							</span>
 							<Link
-								to={`/${post.slug}`}
+								to="/$slug"
+								params={{ slug: post.slug }}
 								className="text-lg md:text-xl font-display hover:text-accent transition"
 							>
 								{post.title}

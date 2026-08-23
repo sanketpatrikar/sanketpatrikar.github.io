@@ -1,5 +1,8 @@
 import { HeadContent, Scripts, createRootRoute, useRouterState } from "@tanstack/react-router";
 
+import { NotFound } from "@/components/NotFound";
+import { getSeoMeta } from "@/lib/seo";
+
 import appCss from "../styles.css?url";
 
 export const Route = createRootRoute({
@@ -30,12 +33,11 @@ export const Route = createRootRoute({
 				content: "width=device-width, initial-scale=1",
 				name: "viewport",
 			},
-			{
-				title: "Sanket Patrikar",
-			},
+			...getSeoMeta(),
 		],
 	}),
 
+	notFoundComponent: NotFound,
 	shellComponent: RootDocument,
 });
 

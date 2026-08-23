@@ -1,6 +1,11 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/")({ component: App });
+import { getCanonicalLink } from "@/lib/seo";
+
+export const Route = createFileRoute("/")({
+	component: App,
+	head: () => ({ links: [getCanonicalLink()] }),
+});
 
 function App() {
 	return (
@@ -8,11 +13,18 @@ function App() {
 			<section className="flex flex-col gap-6 md:gap-8">
 				<div className="flex flex-col items-center gap-7 text-center sm:flex-row sm:items-center sm:gap-10 sm:text-left md:gap-12">
 					<div className="relative h-40 w-40 shrink-0 overflow-hidden rounded-full md:h-44 md:w-44">
-						<img
-							src="/sanket-patrikar.png"
-							alt="Sanket Patrikar"
-							className="h-full w-full object-cover object-[50%_24%]"
-						/>
+						<picture className="block h-full w-full">
+							<source srcSet="/sanket-patrikar.avif" type="image/avif" />
+							<img
+								src="/sanket-patrikar.webp"
+								alt="Sanket Patrikar"
+								width="512"
+								height="512"
+								fetchPriority="high"
+								decoding="async"
+								className="h-full w-full object-cover object-[50%_24%]"
+							/>
+						</picture>
 					</div>
 
 					<div className="flex flex-col gap-2">
