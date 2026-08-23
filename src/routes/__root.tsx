@@ -1,4 +1,5 @@
 import { HeadContent, Scripts, createRootRoute, useRouterState } from "@tanstack/react-router";
+import { useEffect, useRef } from "react";
 
 import { NotFound } from "@/components/NotFound";
 import { SiteNavigation } from "@/components/SiteNavigation";
@@ -10,20 +11,6 @@ import appCss from "../styles.css?url";
 export const Route = createRootRoute({
 	head: () => ({
 		links: [
-			{
-				rel: "preload",
-				href: "/fonts/inter-latin.woff2",
-				as: "font",
-				type: "font/woff2",
-				crossOrigin: "anonymous",
-			},
-			{
-				rel: "preload",
-				href: "/fonts/fraunces-latin.woff2",
-				as: "font",
-				type: "font/woff2",
-				crossOrigin: "anonymous",
-			},
 			{
 				href: appCss,
 				rel: "stylesheet",
@@ -61,9 +48,14 @@ function RouteTransition({ children }: { children: React.ReactNode }) {
 	const pathname = useRouterState({
 		select: (state) => state.location.pathname,
 	});
+	const isInitialRender = useRef(true);
+
+	useEffect(() => {
+		isInitialRender.current = false;
+	}, []);
 
 	return (
-		<div key={pathname} className="page-enter">
+		<div key={pathname} className={isInitialRender.current ? undefined : "page-enter"}>
 			{children}
 		</div>
 	);

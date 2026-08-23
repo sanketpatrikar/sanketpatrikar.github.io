@@ -8,7 +8,7 @@ export function applyTheme(theme: Theme) {
 	root.style.colorScheme = theme;
 	document
 		.querySelector<HTMLMetaElement>("#theme-color")
-		?.setAttribute("content", theme === "dark" ? "#0b0d11" : "#ffffff");
+		?.setAttribute("content", theme === "dark" ? "#0a0a0d" : "#ffffff");
 }
 
 export function getCurrentTheme(): Theme {
@@ -32,6 +32,6 @@ export const themeScript = `
 	}
 	document.documentElement.dataset.theme = theme
 	document.documentElement.style.colorScheme = theme
-	document.querySelector("#theme-color").setAttribute("content", theme === "dark" ? "#0b0d11" : "#ffffff")
+	document.querySelector("#theme-color").setAttribute("content", theme === "dark" ? "#0a0a0d" : "#ffffff")
 })()
 `;

@@ -2,10 +2,16 @@
 
 @font-face {
 	font-family: "Inter";
-	font-display: swap;
+	font-display: optional;
 	font-style: normal;
-	font-weight: 100 900;
-	src: url("/fonts/inter-latin.woff2") format("woff2");
+	font-weight: 400 700;
+	src:
+		local("Inter Variable"),
+		local("Inter"),
+		url("/fonts/inter-latin.woff2") format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+		U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+		U+FEFF, U+FFFD;
 }
 
 @font-face {
@@ -31,7 +37,7 @@
 }
 
 :root[data-theme="dark"] {
-	--page-bg: #0b0d11;
+	--page-bg: #0a0a0d;
 	--ink: #d8dce5;
 	--heading: #f3f5f8;
 	--muted: #999faa;
@@ -40,13 +46,13 @@
 	--accent-soft: #172a35;
 	--border: #262a33;
 	--surface: #171a20;
-	--nav-bg: rgb(11 13 17 / 82%);
+	--nav-bg: rgb(10 10 13 / 82%);
 	color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root:not([data-theme]) {
-		--page-bg: #0b0d11;
+		--page-bg: #0a0a0d;
 		--ink: #d8dce5;
 		--heading: #f3f5f8;
 		--muted: #999faa;
@@ -55,13 +61,33 @@
 		--accent-soft: #172a35;
 		--border: #262a33;
 		--surface: #171a20;
-		--nav-bg: rgb(11 13 17 / 82%);
+		--nav-bg: rgb(10 10 13 / 82%);
 		color-scheme: dark;
 	}
 }
 
 html {
 	background: var(--page-bg);
+}
+
+::-webkit-scrollbar {
+	width: 6px;
+	height: 0;
+}
+
+::-webkit-scrollbar-track {
+	padding: 0 1px;
+	background: var(--nav-bg);
+	border-left: 1px solid rgb(120 120 120 / 10%);
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 3px;
+	background: rgb(120 120 120 / 30%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #555555;
 }
 
 body {
