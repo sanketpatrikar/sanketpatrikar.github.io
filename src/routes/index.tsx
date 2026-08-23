@@ -1,10 +1,18 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 
-import { getCanonicalLink } from "@/lib/seo";
+import { getCanonicalLink, homeStructuredData } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
 	component: App,
-	head: () => ({ links: [getCanonicalLink()] }),
+	head: () => ({
+		links: [getCanonicalLink()],
+		scripts: [
+			{
+				type: "application/ld+json",
+				children: JSON.stringify(homeStructuredData),
+			},
+		],
+	}),
 });
 
 function App() {

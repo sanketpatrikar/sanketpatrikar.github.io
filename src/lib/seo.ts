@@ -1,9 +1,52 @@
 export const siteUrl = "https://sanketpatrikar.com";
-export const siteTitle = "Sanket Patrikar - Software Engineer";
+export const siteTitle = "Sanket Patrikar | Software Engineer";
 export const siteDescription =
   "Software engineer based in Nagpur, India, focused on clear interfaces, fast feedback loops, and maintainable web systems.";
 
 const socialImage = `${siteUrl}/og-image.png`;
+
+export const homeStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: "Sanket Patrikar",
+      description: siteDescription,
+      inLanguage: "en-IN",
+      publisher: { "@id": `${siteUrl}/#person` },
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": `${siteUrl}/#profile`,
+      url: siteUrl,
+      name: siteTitle,
+      description: siteDescription,
+      inLanguage: "en-IN",
+      isPartOf: { "@id": `${siteUrl}/#website` },
+      mainEntity: { "@id": `${siteUrl}/#person` },
+    },
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      name: "Sanket Patrikar",
+      url: siteUrl,
+      image: `${siteUrl}/sanket-patrikar.webp`,
+      jobTitle: "Software Engineer",
+      description: siteDescription,
+      homeLocation: {
+        "@type": "Place",
+        name: "Nagpur, Maharashtra, India",
+      },
+      sameAs: [
+        "https://github.com/sanketpatrikar",
+        "https://linkedin.com/in/sanketpatrikar",
+        "https://x.com/patrikarsanket",
+      ],
+    },
+  ],
+};
 
 export function getCanonicalLink(path = "") {
   return {
@@ -23,6 +66,8 @@ export function getSeoMeta({
   return [
     { title },
     { name: "description", content: description },
+    { name: "author", content: "Sanket Patrikar" },
+    { name: "robots", content: "index, follow, max-image-preview:large" },
     { property: "og:type", content: type },
     { property: "og:site_name", content: "Sanket Patrikar" },
     { property: "og:locale", content: "en_IN" },
