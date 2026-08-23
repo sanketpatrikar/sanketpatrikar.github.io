@@ -20,7 +20,7 @@ const feed = new Feed({
 		"Full-stack developer focused on building simple, scalable products. Working primarily with React, TypeScript, and Postgres.",
 	link: SITE_URL,
 	language: "en",
-	favicon: `${SITE_URL}/favicon.ico`,
+	favicon: `${SITE_URL}/favicon.svg`,
 	copyright: `All rights reserved ${new Date().getFullYear()} Sanket Patrikar`,
 	author: AUTHOR,
 });

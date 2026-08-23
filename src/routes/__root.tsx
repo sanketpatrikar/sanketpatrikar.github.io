@@ -9,6 +9,11 @@ export const Route = createRootRoute({
 				href: appCss,
 				rel: "stylesheet",
 			},
+			{
+				href: "/favicon.svg",
+				rel: "icon",
+				type: "image/svg+xml",
+			},
 			// To help RSS readers find your feed
 			{
 				rel: "alternate",
