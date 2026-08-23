@@ -3,7 +3,7 @@ export const siteTitle = "Sanket Patrikar | Software Engineer";
 export const siteDescription =
   "Software engineer based in Nagpur, India, focused on clear interfaces, fast feedback loops, and maintainable web systems.";
 
-const socialImage = `${siteUrl}/og-image-f3932322.png`;
+const socialImage = `${siteUrl}/og-image-6cda5e9c.jpg`;
 
 export const homeStructuredData = {
   "@context": "https://schema.org",
@@ -61,7 +61,7 @@ export function getSeoMeta({
   path = "",
   type = "website",
 } = {}) {
-  const url = `${siteUrl}${path}`;
+  const url = path ? `${siteUrl}${path}` : `${siteUrl}/?og=6cda5e9c`;
 
   return [
     { title },
@@ -76,7 +76,7 @@ export function getSeoMeta({
     { property: "og:description", content: description },
     { property: "og:image", content: socialImage },
     { property: "og:image:secure_url", content: socialImage },
-    { property: "og:image:type", content: "image/png" },
+    { property: "og:image:type", content: "image/jpeg" },
     { property: "og:image:width", content: "1200" },
     { property: "og:image:height", content: "630" },
     { property: "og:image:alt", content: "Sanket Patrikar, Software Engineer" },
