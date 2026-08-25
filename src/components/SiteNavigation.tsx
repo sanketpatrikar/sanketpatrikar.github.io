@@ -35,24 +35,8 @@ export function SiteNavigation() {
 	return (
 		<>
 			<aside className="fixed inset-y-0 left-0 z-30 hidden w-72 flex-col bg-[var(--page-bg)] p-8 md:flex">
-				<Link to="/" className="group block w-fit">
-					<picture className="block size-16 overflow-hidden rounded-full bg-[var(--surface)]">
-						<source srcSet="/sanket-patrikar.avif" type="image/avif" />
-						<img
-							src="/sanket-patrikar.webp"
-							alt=""
-							width="512"
-							height="512"
-							decoding="async"
-							className="size-full object-cover object-[50%_24%] transition-transform duration-300 group-hover:scale-105"
-						/>
-					</picture>
-					<p className="mt-4 text-xl font-bold tracking-[-0.025em] text-[var(--heading)]">
-						Sanket Patrikar
-					</p>
-					<p className="mt-2 max-w-48 text-sm leading-relaxed text-muted">
-						Software engineer in Nagpur, India
-					</p>
+				<Link to="/" className="block w-fit text-xl font-bold tracking-[-0.025em] text-[var(--heading)]">
+					Sanket Patrikar
 				</Link>
 
 				<nav aria-label="Primary" className="mt-12 flex flex-col items-start gap-5 font-semibold">
@@ -67,19 +51,8 @@ export function SiteNavigation() {
 			</aside>
 
 			<header className="sticky top-0 z-30 flex h-20 items-center justify-between bg-[var(--nav-bg)] px-5 backdrop-blur-xl md:hidden">
-				<Link to="/" className="flex items-center gap-3">
-					<picture className="block size-11 overflow-hidden rounded-full bg-[var(--surface)]">
-						<source srcSet="/sanket-patrikar.avif" type="image/avif" />
-						<img
-							src="/sanket-patrikar.webp"
-							alt=""
-							width="512"
-							height="512"
-							decoding="async"
-							className="size-full object-cover object-[50%_24%]"
-						/>
-					</picture>
-					<span className="font-bold tracking-[-0.02em] text-[var(--heading)]">Sanket Patrikar</span>
+				<Link to="/" className="font-bold tracking-[-0.02em] text-[var(--heading)]">
+					Sanket Patrikar
 				</Link>
 
 				<div className="flex items-center gap-1">
@@ -108,21 +81,8 @@ export function SiteNavigation() {
 			>
 				<div className="flex min-h-dvh flex-col px-6 py-5">
 					<div className="flex h-11 items-center justify-between">
-						<Link to="/" onClick={closeMenu} className="flex items-center gap-3">
-							<picture className="block size-11 overflow-hidden rounded-full bg-[var(--surface)]">
-								<source srcSet="/sanket-patrikar.avif" type="image/avif" />
-								<img
-									src="/sanket-patrikar.webp"
-									alt=""
-									width="512"
-									height="512"
-									decoding="async"
-									className="size-full object-cover object-[50%_24%]"
-								/>
-							</picture>
-							<span className="font-bold tracking-[-0.02em] text-[var(--heading)]">
-								Sanket Patrikar
-							</span>
+						<Link to="/" onClick={closeMenu} className="font-bold tracking-[-0.02em] text-[var(--heading)]">
+							Sanket Patrikar
 						</Link>
 
 						<div className="flex items-center gap-1">
