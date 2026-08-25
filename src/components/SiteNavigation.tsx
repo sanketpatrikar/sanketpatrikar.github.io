@@ -68,7 +68,7 @@ export function SiteNavigation() {
 
 			<header className="relative z-30 flex items-start justify-between bg-[var(--nav-bg)] px-5 py-5 md:hidden">
 				<Link to="/" className="group flex min-w-0 flex-col items-start">
-					<picture className="block size-20 overflow-hidden rounded-full bg-[var(--surface)] ring-3 ring-[var(--page-bg)]">
+					<picture className="block size-20 overflow-hidden rounded-full bg-[var(--surface)] ring-[3px] ring-[var(--page-bg)]">
 						<source srcSet="/sanket-patrikar.avif" type="image/avif" />
 						<img
 							src="/sanket-patrikar.webp"
