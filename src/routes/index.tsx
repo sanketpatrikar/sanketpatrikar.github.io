@@ -1,4 +1,5 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
+import { MapPin } from "lucide-react";
 
 import { SocialLinks } from "@/components/SocialLinks";
 import { getCanonicalLink, homeStructuredData } from "@/lib/seo";
@@ -29,12 +30,16 @@ function App() {
 				<div className="mt-6 space-y-5 text-base leading-[1.55] sm:text-lg">
 					<p>
 						<strong className="font-semibold text-[var(--heading)]">Right now,</strong> I
-						spend most of my time building software and making old systems easier to work
-						with. Alongside that, I tinker with tools, chase oddly specific bugs, and write
-						when I have something worth saying.
+						spend most of my time building software, trying to keep up with the latest AI
+						releases, and reading up on the current in-trend thing on X.
 					</p>
-					<p className="text-muted">
-						Based in Nagpur, India. Usually somewhere between code, docs, and a terminal.
+					<p>
+						Alongside that, I tinker with tools &amp; technologies, and write when I have
+						something worth sharing.
+					</p>
+					<p className="flex items-center gap-2 text-muted">
+						<MapPin className="size-4 shrink-0" aria-hidden="true" />
+						Nagpur, India.
 					</p>
 				</div>
 
@@ -52,7 +57,6 @@ function App() {
 				</h2>
 				<p className="mt-6 text-lg text-muted">Projects will appear here when they are ready.</p>
 			</section>
-
 		</main>
 	);
 }
