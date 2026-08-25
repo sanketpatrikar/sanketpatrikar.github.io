@@ -1,4 +1,4 @@
-import { Link, createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 
 import { SocialLinks } from "@/components/SocialLinks";
 import { getCanonicalLink, homeStructuredData } from "@/lib/seo";
@@ -46,23 +46,6 @@ function App() {
 				<p className="mt-6 text-lg text-muted">Projects will appear here when they are ready.</p>
 			</section>
 
-			<section className="mt-24" aria-labelledby="posts-heading">
-				<div className="flex items-center justify-between gap-6">
-					<h2 id="posts-heading" className="text-xs font-semibold uppercase tracking-[0.3em] text-muted">
-						Posts
-					</h2>
-					<Link to="/posts" className="text-sm text-accent hover:text-[var(--accent-strong)]">
-						All posts <span aria-hidden="true">→</span>
-					</Link>
-				</div>
-
-				<div className="mt-8">
-					<p className="font-display text-2xl text-[var(--heading)]">Coming soon.</p>
-					<p className="mt-2 max-w-lg leading-relaxed text-muted">
-						Notes, ideas, and things worth writing down will show up here.
-					</p>
-				</div>
-			</section>
 		</main>
 	);
 }
