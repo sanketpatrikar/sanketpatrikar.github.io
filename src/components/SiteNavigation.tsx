@@ -35,7 +35,7 @@ export function SiteNavigation() {
 	return (
 		<>
 			<aside className="fixed inset-y-0 left-0 z-30 hidden w-72 flex-col bg-[var(--page-bg)] p-8 md:flex">
-				<Link to="/" className="block w-fit text-xl font-bold tracking-[-0.025em] text-[var(--heading)]">
+				<Link to="/" className="block w-fit font-display text-4xl font-bold leading-[0.95] tracking-[-0.045em] text-[var(--heading)]">
 					Sanket Patrikar
 				</Link>
 
@@ -51,7 +51,7 @@ export function SiteNavigation() {
 			</aside>
 
 			<header className="sticky top-0 z-30 flex h-20 items-center justify-between bg-[var(--nav-bg)] px-5 backdrop-blur-xl md:hidden">
-				<Link to="/" className="font-bold tracking-[-0.02em] text-[var(--heading)]">
+				<Link to="/" className="font-display text-2xl font-bold leading-none tracking-[-0.04em] text-[var(--heading)]">
 					Sanket Patrikar
 				</Link>
 
@@ -81,7 +81,7 @@ export function SiteNavigation() {
 			>
 				<div className="flex min-h-dvh flex-col px-6 py-5">
 					<div className="flex h-11 items-center justify-between">
-						<Link to="/" onClick={closeMenu} className="font-bold tracking-[-0.02em] text-[var(--heading)]">
+						<Link to="/" onClick={closeMenu} className="font-display text-2xl font-bold leading-none tracking-[-0.04em] text-[var(--heading)]">
 							Sanket Patrikar
 						</Link>
 
