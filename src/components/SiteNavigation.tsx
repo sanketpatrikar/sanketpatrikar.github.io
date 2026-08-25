@@ -54,9 +54,6 @@ export function SiteNavigation() {
 				</Link>
 
 				<nav aria-label="Primary" className="mt-12 flex flex-col items-start gap-5 font-semibold">
-					<Link to="/posts" className="nav-link">
-						Posts
-					</Link>
 					<a href="/resume-sanket-patrikar.pdf" className="nav-link">
 						Resume
 					</a>
@@ -140,9 +137,6 @@ export function SiteNavigation() {
 					</div>
 
 					<nav aria-label="Mobile" className="mt-16 flex flex-col items-start gap-7 text-2xl font-semibold">
-						<Link to="/posts" onClick={closeMenu} className="nav-link">
-							Posts
-						</Link>
 						<a href="/resume-sanket-patrikar.pdf" onClick={closeMenu} className="nav-link">
 							Resume
 						</a>
