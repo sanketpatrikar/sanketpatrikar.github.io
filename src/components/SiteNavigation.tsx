@@ -22,7 +22,7 @@ export function SiteNavigation() {
 			</div>
 
 			<div className="mx-auto w-full max-w-[72rem] px-5 sm:px-8 md:px-12">
-				<div className="flex items-start justify-between gap-4">
+				<div className="relative z-10 flex items-start justify-between gap-4">
 					<Link to="/" aria-label="Sanket Patrikar home" className="-mt-10 shrink-0 sm:-mt-16">
 						<picture className="block size-20 overflow-hidden rounded-full bg-[var(--surface)] ring-4 ring-[var(--page-bg)] sm:size-32 md:size-36">
 							<source srcSet="/sanket-patrikar.avif" type="image/avif" />
