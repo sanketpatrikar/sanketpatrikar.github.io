@@ -28,7 +28,7 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
 
 function Resume() {
 	return (
-		<main className="mx-auto w-full max-w-4xl px-6 pb-28 pt-12 sm:px-10 md:mx-0 md:px-12 md:pt-16 lg:px-16">
+		<main className="mx-auto w-full max-w-4xl px-6 pb-28 pt-12 sm:px-10 md:mx-auto md:px-12 md:pt-16 lg:px-16">
 			<header className="border-b border-[var(--border)] pb-10">
 				<p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">Resume</p>
 				<h1 className="mt-4 font-display text-4xl leading-none tracking-[-0.045em] text-[var(--heading)] sm:text-5xl">
