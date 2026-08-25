@@ -29,6 +29,18 @@ const links = [
 		iconClassName: "size-[21px]",
 		path: <path d="M3 5.5h18v13H3v-13Zm0 1 9 7 9-7" fill="none" stroke="currentColor" strokeWidth="1.8" />,
 	},
+	{
+		label: "RSS",
+		href: "/feed.xml",
+		iconClassName: "size-[20px]",
+		path: (
+			<>
+				<path d="M4 11a9 9 0 0 1 9 9" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+				<path d="M4 4a16 16 0 0 1 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+				<circle cx="5" cy="19" r="1.5" />
+			</>
+		),
+	},
 ] as const;
 
 export function SocialLinks({ className = "" }: { className?: string }) {
