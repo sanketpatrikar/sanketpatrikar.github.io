@@ -8,7 +8,7 @@ import { themeScript } from "@/lib/theme";
 
 import appCss from "../styles.css?url";
 
-const showSiteNavigation = false;
+const showSiteNavigation = true;
 
 export const Route = createRootRoute({
 	head: () => ({
