@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 
 import { SocialLinks } from "@/components/SocialLinks";
 import { getCanonicalLink, homeStructuredData } from "@/lib/seo";
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
 
 function App() {
 	return (
-		<main className="mx-auto w-full max-w-[44rem] px-6 pb-24 pt-12 sm:px-10 md:mx-0 md:px-12 md:pt-16 lg:px-16">
+		<main className="mx-auto w-full max-w-[44rem] px-6 pb-24 pt-12 sm:px-10 md:mx-auto md:px-12 md:pt-16 lg:px-16">
 			<section>
 				<SocialLinks className="mb-8" />
 
@@ -37,6 +37,13 @@ function App() {
 						Based in Nagpur, India. Usually somewhere between code, docs, and a terminal.
 					</p>
 				</div>
+
+				<Link
+					to="/resume"
+					className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[var(--heading)] transition-colors hover:text-[var(--accent)]"
+				>
+					View resume <span aria-hidden="true">→</span>
+				</Link>
 			</section>
 
 			<section className="projects-section mt-24" aria-labelledby="projects-heading">
