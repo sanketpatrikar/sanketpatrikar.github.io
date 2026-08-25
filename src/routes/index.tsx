@@ -24,7 +24,7 @@ function App() {
 				<SocialLinks className="mb-8" />
 
 				<h1 className="font-display text-[2.15rem] leading-tight tracking-[-0.035em] text-[var(--heading)] sm:text-[2.6rem]">
-					Hi, I&apos;m Sanket Patrikar.
+					Hi, I&apos;m Sanket.
 				</h1>
 
 				<div className="mt-6 space-y-5 text-base leading-[1.55] sm:text-lg">
