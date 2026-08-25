@@ -41,10 +41,6 @@ function Resume() {
 				<div className="mt-6 flex flex-wrap gap-x-3 gap-y-2 text-sm leading-relaxed text-muted">
 					<span>Nagpur, Maharashtra</span>
 					<span aria-hidden="true">|</span>
-					<a className="nav-link" href="tel:+917972933216">
-						+91 7972933216
-					</a>
-					<span aria-hidden="true">|</span>
 					<a className="nav-link" href="mailto:sanketspatrikar@gmail.com">
 						sanketspatrikar@gmail.com
 					</a>
