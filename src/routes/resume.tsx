@@ -118,7 +118,7 @@ function Resume() {
 				href={resumePdf}
 				download="resume-sanket-patrikar.pdf"
 				aria-label="Download resume as PDF"
-				title="Download PDF"
+				title="Download resume PDF"
 				className="fixed bottom-6 right-6 z-20 inline-flex size-14 items-center justify-center rounded-full bg-[var(--accent)] text-white shadow-lg shadow-black/15 transition duration-200 hover:scale-105 hover:bg-[var(--accent-strong)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)] md:bottom-8 md:right-8"
 			>
 				<Download aria-hidden="true" className="size-5" strokeWidth={2} />
