@@ -8,6 +8,8 @@ import { themeScript } from "@/lib/theme";
 
 import appCss from "../styles.css?url";
 
+const showSiteNavigation = false;
+
 export const Route = createRootRoute({
 	head: () => ({
 		links: [
@@ -75,8 +77,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 				/>
 			</head>
 			<body className="min-h-screen antialiased">
-				<SiteNavigation />
-				<div className="site-content md:ml-72">
+				{showSiteNavigation ? <SiteNavigation /> : null}
+				<div className={showSiteNavigation ? "site-content md:ml-72" : "site-content"}>
 					<RouteTransition>{children}</RouteTransition>
 				</div>
 				<Scripts />
