@@ -35,8 +35,24 @@ export function SiteNavigation() {
 	return (
 		<>
 			<aside className="fixed inset-y-0 left-0 z-30 hidden w-72 flex-col bg-[var(--page-bg)] p-8 md:flex">
-				<Link to="/" className="block w-fit font-display text-4xl font-bold leading-[0.95] tracking-[-0.045em] text-[var(--heading)]">
-					Sanket Patrikar
+				<Link to="/" className="group block w-fit">
+					<picture className="block size-28 overflow-hidden rounded-full bg-[var(--surface)] ring-4 ring-[var(--page-bg)]">
+						<source srcSet="/sanket-patrikar.avif" type="image/avif" />
+						<img
+							src="/sanket-patrikar.webp"
+							alt=""
+							width="512"
+							height="512"
+							decoding="async"
+							className="size-full object-cover object-[50%_24%] transition-transform duration-300 group-hover:scale-105"
+						/>
+					</picture>
+					<p className="mt-5 font-display text-4xl font-bold leading-[0.95] tracking-[-0.045em] text-[var(--heading)]">
+						Sanket Patrikar
+					</p>
+					<p className="mt-4 max-w-52 text-base leading-relaxed text-muted">
+						Software engineer in Nagpur, India
+					</p>
 				</Link>
 
 				<nav aria-label="Primary" className="mt-12 flex flex-col items-start gap-5 font-semibold">
@@ -50,9 +66,23 @@ export function SiteNavigation() {
 				</div>
 			</aside>
 
-			<header className="sticky top-0 z-30 flex h-20 items-center justify-between bg-[var(--nav-bg)] px-5 backdrop-blur-xl md:hidden">
-				<Link to="/" className="font-display text-2xl font-bold leading-none tracking-[-0.04em] text-[var(--heading)]">
-					Sanket Patrikar
+			<header className="relative z-30 flex items-start justify-between bg-[var(--nav-bg)] px-5 py-5 md:hidden">
+				<Link to="/" className="group flex min-w-0 flex-col items-start">
+					<picture className="block size-20 overflow-hidden rounded-full bg-[var(--surface)] ring-3 ring-[var(--page-bg)]">
+						<source srcSet="/sanket-patrikar.avif" type="image/avif" />
+						<img
+							src="/sanket-patrikar.webp"
+							alt=""
+							width="512"
+							height="512"
+							decoding="async"
+							className="size-full object-cover object-[50%_24%] transition-transform duration-300 group-hover:scale-105"
+						/>
+					</picture>
+					<span className="mt-3 font-display text-3xl font-bold leading-none tracking-[-0.04em] text-[var(--heading)]">
+						Sanket Patrikar
+					</span>
+					<span className="mt-2 text-sm text-muted">Software engineer in Nagpur, India</span>
 				</Link>
 
 				<div className="flex items-center gap-1">
