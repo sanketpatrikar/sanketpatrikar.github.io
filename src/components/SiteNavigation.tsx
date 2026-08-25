@@ -8,7 +8,7 @@ export function SiteNavigation() {
 		<header className="border-b border-[var(--border)] bg-[var(--page-bg)]">
 			<div className="relative h-36 overflow-hidden sm:h-44 md:h-56">
 				<img
-					src="/profile-cover.webp"
+					src="/profile-cover-rocket.webp"
 					alt=""
 					width="1024"
 					height="341"
