@@ -5,6 +5,8 @@ import { useEffect, useRef, useState } from "react";
 import { SocialLinks } from "@/components/SocialLinks";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
+const showMobileMenu = false;
+
 export function SiteNavigation() {
 	const dialogRef = useRef<HTMLDialogElement>(null);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -88,7 +90,7 @@ export function SiteNavigation() {
 						aria-label="Open menu"
 						aria-haspopup="dialog"
 						aria-expanded={isMenuOpen}
-						className="inline-flex size-10 cursor-pointer items-center justify-center rounded-full text-[var(--heading)] transition-colors hover:bg-[var(--accent-soft)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)]"
+						className={showMobileMenu ? "inline-flex size-10 cursor-pointer items-center justify-center rounded-full text-[var(--heading)] transition-colors hover:bg-[var(--accent-soft)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)]" : "hidden"}
 					>
 						<Menu aria-hidden="true" className="size-5" strokeWidth={1.8} />
 					</button>
