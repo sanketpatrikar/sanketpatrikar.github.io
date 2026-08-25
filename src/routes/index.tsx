@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
 
 function App() {
 	return (
-		<main className="mx-auto w-full max-w-[44rem] px-6 pb-24 pt-10 sm:px-10 md:mx-auto md:px-12 md:pt-14 lg:px-16">
+		<main className="mx-auto w-full max-w-[44rem] px-6 pb-24 pt-6 sm:px-10 md:mx-auto md:px-12 md:pt-8 lg:px-16">
 			<section>
 				<div className="mt-6 space-y-5 text-base leading-[1.55] sm:text-lg">
 					<p>
