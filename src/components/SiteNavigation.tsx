@@ -42,7 +42,7 @@ export function SiteNavigation() {
 					</div>
 				</div>
 
-				<div className="pb-8 pt-3 sm:pt-4">
+				<div className="pb-5 pt-3 sm:pt-4">
 					<Link to="/" className="block w-fit">
 						<p className="font-display text-[2.15rem] font-bold leading-[0.95] tracking-[-0.045em] text-[var(--heading)] sm:text-[2.6rem]">
 							Sanket Patrikar
@@ -50,11 +50,6 @@ export function SiteNavigation() {
 						<p className="mt-3 text-base text-muted sm:text-lg">Software engineer in Nagpur, India</p>
 					</Link>
 
-					<nav aria-label="Primary" className="mt-6 flex items-center gap-5 font-semibold">
-						<Link to="/resume" className="nav-link">
-							Resume
-						</Link>
-					</nav>
 				</div>
 			</div>
 		</header>
