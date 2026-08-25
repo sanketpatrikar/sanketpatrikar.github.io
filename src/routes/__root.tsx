@@ -78,7 +78,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			</head>
 			<body className="min-h-screen antialiased">
 				{showSiteNavigation ? <SiteNavigation /> : null}
-				<div className={showSiteNavigation ? "site-content md:ml-72" : "site-content"}>
+				<div className="site-content">
 					<RouteTransition>{children}</RouteTransition>
 				</div>
 				<Scripts />
