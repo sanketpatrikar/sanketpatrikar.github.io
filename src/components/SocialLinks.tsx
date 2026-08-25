@@ -16,6 +16,7 @@ const links = [
 	{
 		label: "LinkedIn",
 		href: "https://linkedin.com/in/sanketpatrikar",
+		iconClassName: "size-[20px]",
 		path: (
 			<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.063 2.063 0 1 1 0-4.126 2.063 2.063 0 0 1 0 4.126zM6.894 20.452H3.777V9h3.117v11.452z" />
 		),
@@ -23,6 +24,7 @@ const links = [
 	{
 		label: "Email",
 		href: "mailto:sanketspatrikar@gmail.com",
+		iconClassName: "size-[21px]",
 		path: <path d="M3 5.5h18v13H3v-13Zm0 1 9 7 9-7" fill="none" stroke="currentColor" strokeWidth="1.8" />,
 	},
 ] as const;
@@ -39,7 +41,7 @@ export function SocialLinks({ className = "" }: { className?: string }) {
 					title={link.label}
 					className="transition-colors hover:text-[var(--heading)] focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)]"
 				>
-					<svg aria-hidden="true" viewBox="0 0 24 24" className="size-[17px] fill-current">
+					<svg aria-hidden="true" viewBox="0 0 24 24" className={`${link.iconClassName ?? "size-[17px]"} fill-current`}>
 						{link.path}
 					</svg>
 				</a>
