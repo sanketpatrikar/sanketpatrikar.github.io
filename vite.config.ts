@@ -6,9 +6,9 @@ import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkMdxFrontmatter from "remark-mdx-frontmatter";
-import { defineConfig } from "vite";
+import { defineConfig, type UserConfig } from "vite";
 
-const config = defineConfig({
+const config = {
   assetsInclude: ["**/*.pdf"],
   staged: {
     "*.{js,jsx,ts,tsx}": ["pnpm exec oxfmt --write", "pnpm exec oxlint"],
@@ -49,6 +49,8 @@ const config = defineConfig({
   ssr: {
     noExternal: ["react-tweet"],
   },
-});
+} satisfies UserConfig & {
+  staged: Record<string, string | string[]>;
+};
 
-export default config;
+export default defineConfig(config);

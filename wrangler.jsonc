@@ -2,6 +2,17 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "portfolio",
   "compatibility_date": "2026-08-31",
+  "workers_dev": true,
+  "routes": [
+    {
+      "pattern": "sanketpatrikar.com",
+      "custom_domain": true,
+    },
+    {
+      "pattern": "www.sanketpatrikar.com",
+      "custom_domain": true,
+    },
+  ],
   "assets": {
     "directory": "./dist/client",
     "not_found_handling": "404-page",

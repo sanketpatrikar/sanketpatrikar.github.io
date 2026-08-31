@@ -8,115 +8,115 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as ResumeRouteImport } from './routes/resume'
-import { Route as SlugRouteImport } from './routes/$slug'
-import { Route as PostsRouteImport } from './routes/posts'
+import { Route as rootRouteImport } from "./routes/__root";
+import { Route as IndexRouteImport } from "./routes/index";
+import { Route as SlugRouteImport } from "./routes/$slug";
+import { Route as PostsRouteImport } from "./routes/posts";
+import { Route as ResumeRouteImport } from "./routes/resume";
 
 const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+  id: "/",
+  path: "/",
   getParentRoute: () => rootRouteImport,
-} as any)
-const ResumeRoute = ResumeRouteImport.update({
-  id: '/resume',
-  path: '/resume',
-  getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const SlugRoute = SlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
+  id: "/$slug",
+  path: "/$slug",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 const PostsRoute = PostsRouteImport.update({
-  id: '/posts',
-  path: '/posts',
+  id: "/posts",
+  path: "/posts",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
+const ResumeRoute = ResumeRouteImport.update({
+  id: "/resume",
+  path: "/resume",
+  getParentRoute: () => rootRouteImport,
+} as any);
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/resume': typeof ResumeRoute
-  '/$slug': typeof SlugRoute
-  '/posts': typeof PostsRoute
+  "/": typeof IndexRoute;
+  "/$slug": typeof SlugRoute;
+  "/posts": typeof PostsRoute;
+  "/resume": typeof ResumeRoute;
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/resume': typeof ResumeRoute
-  '/$slug': typeof SlugRoute
-  '/posts': typeof PostsRoute
+  "/": typeof IndexRoute;
+  "/$slug": typeof SlugRoute;
+  "/posts": typeof PostsRoute;
+  "/resume": typeof ResumeRoute;
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/resume': typeof ResumeRoute
-  '/$slug': typeof SlugRoute
-  '/posts': typeof PostsRoute
+  __root__: typeof rootRouteImport;
+  "/": typeof IndexRoute;
+  "/$slug": typeof SlugRoute;
+  "/posts": typeof PostsRoute;
+  "/resume": typeof ResumeRoute;
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/resume' | '/$slug' | '/posts'
-  fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/resume' | '/$slug' | '/posts'
-  id: '__root__' | '/' | '/resume' | '/$slug' | '/posts'
-  fileRoutesById: FileRoutesById
+  fileRoutesByFullPath: FileRoutesByFullPath;
+  fullPaths: "/" | "/$slug" | "/posts" | "/resume";
+  fileRoutesByTo: FileRoutesByTo;
+  to: "/" | "/$slug" | "/posts" | "/resume";
+  id: "__root__" | "/" | "/$slug" | "/posts" | "/resume";
+  fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  ResumeRoute: typeof ResumeRoute
-  SlugRoute: typeof SlugRoute
-  PostsRoute: typeof PostsRoute
+  IndexRoute: typeof IndexRoute;
+  SlugRoute: typeof SlugRoute;
+  PostsRoute: typeof PostsRoute;
+  ResumeRoute: typeof ResumeRoute;
 }
 
-declare module '@tanstack/react-router' {
+declare module "@tanstack/react-router" {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/resume': {
-      id: '/resume'
-      path: '/resume'
-      fullPath: '/resume'
-      preLoaderRoute: typeof ResumeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/$slug': {
-      id: '/$slug'
-      path: '/$slug'
-      fullPath: '/$slug'
-      preLoaderRoute: typeof SlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/posts': {
-      id: '/posts'
-      path: '/posts'
-      fullPath: '/posts'
-      preLoaderRoute: typeof PostsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+    "/": {
+      id: "/";
+      path: "/";
+      fullPath: "/";
+      preLoaderRoute: typeof IndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/$slug": {
+      id: "/$slug";
+      path: "/$slug";
+      fullPath: "/$slug";
+      preLoaderRoute: typeof SlugRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/posts": {
+      id: "/posts";
+      path: "/posts";
+      fullPath: "/posts";
+      preLoaderRoute: typeof PostsRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/resume": {
+      id: "/resume";
+      path: "/resume";
+      fullPath: "/resume";
+      preLoaderRoute: typeof ResumeRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ResumeRoute: ResumeRoute,
   SlugRoute: SlugRoute,
   PostsRoute: PostsRoute,
-}
+  ResumeRoute: ResumeRoute,
+};
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+  ._addFileTypes<FileRouteTypes>();
 
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
+import type { getRouter } from "./router.tsx";
+import type { createStart } from "@tanstack/react-start";
+declare module "@tanstack/react-start" {
   interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
+    ssr: true;
+    router: Awaited<ReturnType<typeof getRouter>>;
   }
 }
