@@ -1,15 +1,16 @@
 allowBuilds:
   esbuild: true
+  workerd: true
 catalog:
-    vite: ^8.2.1
-    vitest: ^4.1.10
+  vite: ^8.2.1
+  vitest: ^4.1.10
 overrides:
-    vite: "catalog:"
-    vitest: "catalog:"
+  vite: "catalog:"
+  vitest: "catalog:"
 peerDependencyRules:
-    allowAny:
-        - vite
-        - vitest
-    allowedVersions:
-        vite: "*"
-        vitest: "*"
+  allowAny:
+    - vite
+    - vitest
+  allowedVersions:
+    vite: "*"
+    vitest: "*"
