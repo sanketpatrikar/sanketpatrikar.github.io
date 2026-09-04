@@ -21,7 +21,7 @@ These are local timings, not GitHub Actions timings or clean-machine install ben
 - Load Shiki grammars on demand, preserve the existing theme, and reuse its transformation cache within a production build. Unknown languages fall back to plain text. The cache is not persisted between builds.
 - Pin stable pnpm 12.3.4, replacing 12.0.0-rc.7, and regenerate its package-manager lockfile entries.
 - Remove unused Nitro and the separate TypeScript native preview package. The existing TypeScript 7 compiler remains. This prunes 20 package entries from the application lockfile (752 to 732), without adding new application packages.
-- Use `pnpm/setup@v2` for native pnpm and Node 24 setup in CI. Keep store caching and an explicit frozen install; disable the action's automatic install to avoid running it twice.
+- Use `pnpm/setup@v2` for native pnpm and Node 26 setup in CI. Keep store caching and an explicit frozen install; disable the action's automatic install to avoid running it twice.
 - Cache pnpm's separate lockfile verification record on the Ubuntu runner. Cache keys include the lockfile, manifest and pnpm configuration. A new entry per run lets refreshed verification records replace old ones; pnpm still checks record validity and enforces its policies. No install or verification checks are disabled.
 - Cancel superseded verification workflows for the same ref. Keep the existing job name and all validation gates.
 
@@ -53,3 +53,21 @@ Disabling gzip size reporting, the native config loader, a custom programmatic b
 - [Shiki rehype integration](https://shiki.style/packages/rehype)
 - [pnpm setup action](https://github.com/pnpm/setup)
 - [GitHub workflow concurrency](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/control-workflow-concurrency)
+
+## Node runtime comparison
+
+A follow-up comparison used the optimized configuration, the same pnpm 12.3.4 and unchanged dependencies. One warmup per variant was excluded; five measured rounds rotated through all four variants. The compile cache was warmed separately for each Node version.
+
+| Runtime | Compile cache | Five measured runs (seconds) | Median |
+| --- | --- | --- | --- |
+| Node 24.20.0 (latest LTS) | Off | 1.974, 2.485, 2.473, 2.083, 2.181 | 2.181s |
+| Node 26.8.1 (Current) | Off | 1.699, 2.119, 1.861, 1.689, 2.095 | 1.861s |
+| Node 24.20.0 | Warm | 2.194, 1.799, 2.496, 2.191, 2.198 | 2.194s |
+| Node 26.8.1 | Warm | 1.993, 2.131, 1.777, 2.101, 2.015 | 2.015s |
+
+Node 26 reduced the uncached median by 14.7% against the latest Node 24 patch in this comparison. The workflow now tracks Node 26, currently 26.8.1. This is the Current release line, not yet LTS. All nine tests, type checking, lint and production output checks passed on Node 26.8.1. The module compile cache did not help and is not enabled. No speculative V8 or heap flags were added.
+
+The earlier 28.9% configuration result and this runtime comparison are separate experiments; their percentages should not be added or treated as one measured end-to-end CI improvement.
+
+- [Node 26.8.1 release](https://nodejs.org/en/blog/release/v26.8.1)
+- [Node module compile cache](https://nodejs.org/api/module.html#module-compile-cache)
