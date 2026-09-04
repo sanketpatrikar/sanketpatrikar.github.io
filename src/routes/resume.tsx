@@ -18,9 +18,9 @@ export const Route = createFileRoute("/resume")({
 
 const resumePdf = "/resume-sanket-patrikar.pdf";
 
-function SectionTitle({ children }: { children: React.ReactNode }) {
+function SectionTitle({ id, children }: { id: string; children: React.ReactNode }) {
 	return (
-		<h2 className="border-b border-[var(--border)] pb-3 text-xs font-semibold uppercase tracking-[0.3em] text-muted">
+		<h2 id={id} className="border-b border-[var(--border)] pb-3 text-xs font-semibold uppercase tracking-[0.3em] text-muted">
 			{children}
 		</h2>
 	);
@@ -56,7 +56,7 @@ function Resume() {
 			</header>
 
 			<section className="mt-14" aria-labelledby="experience-heading">
-				<SectionTitle>Experience</SectionTitle>
+				<SectionTitle id="experience-heading">Experience</SectionTitle>
 				<div className="mt-8">
 					<div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
 						<div>
@@ -84,7 +84,7 @@ function Resume() {
 			</section>
 
 			<section className="mt-14" aria-labelledby="skills-heading">
-				<SectionTitle>Technical Skills</SectionTitle>
+				<SectionTitle id="skills-heading">Technical Skills</SectionTitle>
 				<dl className="mt-8 grid gap-x-10 gap-y-5 sm:grid-cols-[10rem_1fr]">
 					<dt className="font-semibold text-[var(--heading)]">Frontend</dt>
 					<dd className="m-0 leading-relaxed text-muted">React, TypeScript / JavaScript, Vite, React Query, HTML, CSS</dd>
@@ -100,7 +100,7 @@ function Resume() {
 			</section>
 
 			<section className="mt-14" aria-labelledby="education-heading">
-				<SectionTitle>Education</SectionTitle>
+				<SectionTitle id="education-heading">Education</SectionTitle>
 				<div className="mt-8 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
 					<div>
 						<h3 className="text-lg font-semibold tracking-[-0.02em] text-[var(--heading)]">KDK College of Engineering</h3>
@@ -115,7 +115,7 @@ function Resume() {
 				download="resume-sanket-patrikar.pdf"
 				aria-label="Download resume as PDF"
 				title="Download resume PDF"
-				className="fixed bottom-6 right-6 z-20 inline-flex size-14 items-center justify-center rounded-full bg-[var(--accent)] text-white shadow-lg shadow-black/15 transition duration-200 hover:scale-105 hover:bg-[var(--accent-strong)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)] md:bottom-8 md:right-8"
+				className="fixed bottom-6 right-6 z-20 inline-flex size-14 items-center justify-center rounded-full bg-[var(--accent)] text-[var(--accent-foreground)] shadow-lg shadow-black/15 transition duration-200 hover:scale-105 hover:bg-[var(--accent-strong)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent)] md:bottom-8 md:right-8"
 			>
 				<Download aria-hidden="true" className="size-5" strokeWidth={2} />
 			</a>
