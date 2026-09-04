@@ -8,15 +8,26 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v6
+      - uses: pnpm/setup@v2
         with:
-          node-version: 24
-          cache: pnpm
+          runtime: node@24
+          cache: true
+          install: false
+      - name: cache lockfile verification
+        uses: actions/cache@v5
+        with:
+          path: ~/.cache/pnpm/lockfile-verified.jsonl
+          key: pnpm-verification-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', 'pnpm-workspace.yaml', 'package.json', '.npmrc') }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            pnpm-verification-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml', 'pnpm-workspace.yaml', 'package.json', '.npmrc') }}-
       - run: pnpm install --frozen-lockfile
       - run: pnpm check
