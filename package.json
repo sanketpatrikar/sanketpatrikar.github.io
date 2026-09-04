@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port 3000",
-    "build": "vite build && node scripts/generate-rss.ts && node -e \"require('fs').copyFileSync('public/resume-sanket-patrikar.pdf', 'dist/client/resume-sanket-patrikar.pdf')\"",
+    "build": "vite build && node scripts/generate-rss.ts",
     "deploy:cloudflare": "pnpm build && wrangler deploy",
     "preview": "vite preview",
     "test": "vitest run --config vitest.config.ts",
