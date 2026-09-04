@@ -7,9 +7,11 @@
     "build": "vite build && node scripts/generate-rss.ts && node -e \"require('fs').copyFileSync('public/resume-sanket-patrikar.pdf', 'dist/client/resume-sanket-patrikar.pdf')\"",
     "deploy:cloudflare": "pnpm build && wrangler deploy",
     "preview": "vite preview",
-    "test": "vitest run",
+    "test": "vitest run --config vitest.config.ts",
     "lint": "oxlint",
-    "format": "oxfmt --write"
+    "format": "oxfmt --write",
+    "typecheck": "tsc --noEmit",
+    "check": "pnpm typecheck && pnpm lint && pnpm test && pnpm build && node scripts/check-build.mjs"
   },
   "dependencies": {
     "@mdx-js/react": "^3.1.1",

@@ -1,0 +1,81 @@
+@font-face {
+  font-family: Inter;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("/fonts/inter-latin.woff2") format("woff2");
+}
+* {
+  box-sizing: border-box;
+}
+:root {
+  color-scheme: light dark;
+  --bg: #fff;
+  --ink: #2f3340;
+  --heading: #171923;
+  --muted: #666b78;
+  --accent: #2d78a4;
+  --accent-strong: #24658c;
+}
+:root[data-theme="dark"] {
+  --bg: #0b0d11;
+  --ink: #d8dce5;
+  --heading: #f3f5f8;
+  --muted: #999faa;
+  --accent: #72c7ec;
+  --accent-strong: #a4ddf4;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg: #0b0d11;
+    --ink: #d8dce5;
+    --heading: #f3f5f8;
+    --muted: #999faa;
+    --accent: #72c7ec;
+    --accent-strong: #a4ddf4;
+  }
+}
+body {
+  margin: 0;
+  padding: 0 1.5rem;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Inter, system-ui, sans-serif;
+}
+main {
+  display: flex;
+  min-height: 100vh;
+  max-width: 56rem;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center;
+}
+.code {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+}
+.title {
+  margin: 0.75rem 0 0;
+  color: var(--heading);
+  font-size: clamp(2.25rem, 8vw, 3.75rem);
+  letter-spacing: -0.04em;
+}
+.description {
+  max-width: 36rem;
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+a {
+  width: max-content;
+  margin-top: 2rem;
+  color: var(--accent);
+  font-size: 1.125rem;
+  text-decoration: none;
+}
+a:hover {
+  color: var(--accent-strong);
+}
