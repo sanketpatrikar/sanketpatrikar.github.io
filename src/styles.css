@@ -111,20 +111,6 @@ body {
 		serif;
 }
 
-@media (min-width: 48rem) {
-	html,
-	body {
-		height: 100%;
-		overflow: hidden;
-	}
-
-	.site-content {
-		height: 100dvh;
-		overflow-y: auto;
-		overscroll-behavior-y: contain;
-		scrollbar-gutter: stable;
-	}
-}
 
 .text-muted {
 	color: var(--muted);
