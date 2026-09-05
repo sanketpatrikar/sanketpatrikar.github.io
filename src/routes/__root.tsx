@@ -88,9 +88,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         />
       </head>
       <body className="min-h-screen antialiased">
-        {showSiteNavigation ? <SiteNavigation /> : null}
-        <div className="site-content">
-          <RouteTransition>{children}</RouteTransition>
+        <div className="mx-auto min-h-screen w-full max-w-5xl lg:border-x lg:border-[var(--border)]">
+          {showSiteNavigation ? <SiteNavigation /> : null}
+          <div className="site-content">
+            <RouteTransition>{children}</RouteTransition>
+          </div>
         </div>
         <Scripts />
       </body>
