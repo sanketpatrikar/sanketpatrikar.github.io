@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 
 import { NotFound } from "@/components/NotFound";
 import { SiteNavigation } from "@/components/SiteNavigation";
+import { reloadOnPreloadErrorScript } from "@/lib/preload-recovery";
 import { getSeoMeta } from "@/lib/seo";
 import { themeScript } from "@/lib/theme";
 
@@ -100,35 +101,3 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   );
 }
 
-const reloadOnPreloadErrorScript = `
-(function () {
-	var reload = function () {
-		window.location.reload()
-	}
-
-	window.addEventListener("vite:preloadError", function (event) {
-		event.preventDefault()
-		reload()
-	})
-
-	window.addEventListener("error", function (event) {
-		if (
-			event.message &&
-			event.message.includes("Failed to fetch dynamically imported module")
-		) {
-			event.preventDefault()
-			reload()
-		}
-	})
-
-	window.addEventListener("unhandledrejection", function (event) {
-		if (
-			event.reason &&
-			String(event.reason).includes("Failed to fetch dynamically imported module")
-		) {
-			event.preventDefault()
-			reload()
-		}
-	})
-})()
-`;
